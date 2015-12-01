@@ -1,0 +1,88 @@
+{
+  "comments": [
+    {
+      "canvasID": "s-87fdc060-e88a-409c-b3af-7c0ae68f9fa9",
+      "elementID": "s-Category_1",
+      "canvasURL": "screens/87fdc060-e88a-409c-b3af-7c0ae68f9fa9",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 1,
+      "parentCode": null,
+      "content": "Se actualiza con el campo de arriba con AJAX",
+      "timestamp": "1448796277045",
+      "date": "29-Nov-2015 12:24",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-87fdc060-e88a-409c-b3af-7c0ae68f9fa9",
+      "elementID": "s-Input_1",
+      "canvasURL": "screens/87fdc060-e88a-409c-b3af-7c0ae68f9fa9",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 2,
+      "parentCode": null,
+      "content": "Se filtra usando la entrada y buscando por nombre, apellidos, nombre de usuario y correo",
+      "timestamp": "1448796343514",
+      "date": "29-Nov-2015 12:25",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-073ecb88-18f2-4ab1-b2e7-921529fc663d",
+      "elementID": "s-Button_1",
+      "canvasURL": "screens/073ecb88-18f2-4ab1-b2e7-921529fc663d",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 3,
+      "parentCode": null,
+      "content": "Al introducir, coge como fecha la actual y como tipo de cuenta gasto",
+      "timestamp": "1448797160129",
+      "date": "29-Nov-2015 12:39",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-50d22f60-21d8-4771-9cea-5cd85d8c2547",
+      "elementID": "s-Button_1",
+      "canvasURL": "screens/50d22f60-21d8-4771-9cea-5cd85d8c2547",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 4,
+      "parentCode": null,
+      "content": "Se introduce una entrada en la tabla cuenta con los datos dados, la fecha actual y tipo gasto.\nAdemás también se crea una entrada en la tabla producto y cada vez que se venda uno se introducirá un campo en la tabla cuenta con tipo ingreso",
+      "timestamp": "1448797572196",
+      "date": "29-Nov-2015 12:46",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-d7189069-b9a1-42cb-9f83-22c1029ba0fa",
+      "elementID": "s-Button_1",
+      "canvasURL": "screens/d7189069-b9a1-42cb-9f83-22c1029ba0fa",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 5,
+      "parentCode": null,
+      "content": "Se introduce una entrada en la tabla cuenta con fecha actual y tipo donación",
+      "timestamp": "1448797927444",
+      "date": "29-Nov-2015 12:52",
+      "fileName": "",
+      "isRead": true
+    }
+    ,{
+      "canvasID": "s-d7189069-b9a1-42cb-9f83-22c1029ba0fa",
+      "elementID": "s-Button_2",
+      "canvasURL": "screens/d7189069-b9a1-42cb-9f83-22c1029ba0fa",
+      "author": "Anonymous",
+      "authorID" : 0,
+      "code": 6,
+      "parentCode": null,
+      "content": "Se introduce una entrada en la tabla cuenta con tipo gasto, importe 0 y fecha actual.\nTambién se introduce una entrada en la tabla producto con precio compra 0 y los datos de arriba.",
+      "timestamp": "1448798017598",
+      "date": "29-Nov-2015 12:53",
+      "fileName": "",
+      "isRead": true
+    }
+  ]
+}
