@@ -71,26 +71,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mda`.`Gasto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mda`.`Gasto` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `concepto` VARCHAR(45) NOT NULL,
-  `importe` FLOAT NOT NULL,
-  `descripcion` TEXT NULL,
-  `cantidad` INT NOT NULL DEFAULT 1,
-  `evento` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_Gasto_Evento1_idx` (`evento` ASC),
-  CONSTRAINT `fk_Gasto_Evento1`
-    FOREIGN KEY (`evento`)
-    REFERENCES `mda`.`Evento` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `mda`.`Cuenta`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mda`.`Cuenta` (
@@ -109,43 +89,6 @@ CREATE TABLE IF NOT EXISTS `mda`.`Cuenta` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mda`.`Ingreso`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mda`.`Ingreso` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `fecha` DATETIME NOT NULL,
-  `inversion` INT NOT NULL,
-  `cantidad` INT NOT NULL,
-  `usuario` INT NOT NULL,
-  `evento` INT NOT NULL,
-  PRIMARY KEY (`id`, `inversion`),
-  INDEX `fk_Ingreso_Inversion1_idx` (`inversion` ASC),
-  INDEX `fk_Ingreso_Organizador1_idx` (`usuario` ASC, `evento` ASC),
-  CONSTRAINT `fk_Ingreso_Inversion1`
-    FOREIGN KEY (`inversion`)
-    REFERENCES `mda`.`Cuenta` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Ingreso_Organizador1`
-    FOREIGN KEY (`usuario` , `evento`)
-    REFERENCES `mda`.`Organizador` (`usuario` , `evento`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mda`.`Inventario`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mda`.`Inventario` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `cantidad` INT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `mda`.`Actividad`
@@ -170,26 +113,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mda`.`Donacion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mda`.`Donacion` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `concepto` VARCHAR(45) NOT NULL,
-  `importe` FLOAT NOT NULL,
-  `fecha` DATETIME NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mda`.`Transaccion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mda`.`Transaccion` (
-)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `mda`.`Producto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mda`.`Producto` (
@@ -207,17 +130,6 @@ CREATE TABLE IF NOT EXISTS `mda`.`Producto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mda`.`Inventario`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mda`.`Inventario` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `cantidad` INT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `mda`.`Comentario`
@@ -252,17 +164,6 @@ CREATE TABLE IF NOT EXISTS `mda`.`Voto` (
     REFERENCES `mda`.`Actividad` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mda`.`Patrocinador`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mda`.`Patrocinador` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(45) NOT NULL,
-  `descripcion` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
