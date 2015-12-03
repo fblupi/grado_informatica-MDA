@@ -1,6 +1,6 @@
 <?php
 
-include_once "dbConnect.php"
+include_once "dbConnect.php";
 
 if (!isset($_SESSION['login'])) {//Si no se puede acceder a $_SESSION['login'] es porque hace falta iniciar sesión.
     session_start();
@@ -59,13 +59,13 @@ if(!empty($_FILES['imagen'])){
 }
 
 $conexion = dbConnect();
-$sql = "INSERT INTO Usuario (login, correo, pass, nombre, apellidos, direccion,
+$sql = "INSERT INTO usuario (login, correo, pass, nombre, apellidos, direccion,
 	telefono, localizacion, fechaNacimiento, imagen) VALUES " . $login . ", " .
 	$correo . ", " . $pass . ", " . $nombre . ", " . $apellidos . ", " . $direccion . ", "
 	. $telefono . ", " . $localizacion . ", " . $fechaNacimiento . ", " . $imagen . ";";
-	
-$resultado = mysqli_query($sql, $conexion);
-mysql_close($conexion);
+
+$resultado = mysqli_query($conexion, $sql);
+mysqli_close($conexion);
 
 if(!$resultado){
 	salir("El usuario ya existe", -1);
