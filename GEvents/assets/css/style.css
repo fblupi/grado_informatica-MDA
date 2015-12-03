@@ -3,7 +3,7 @@
 }
 
 .navbar-brand{
-  padding: 5 5 5 5 !important;
+  padding: 5 !important;
 }
 
 .usuario{
@@ -46,7 +46,21 @@ section{
   text-align: justify;
 }
 
+.izquierda{
+	float: right;
+	padding: 14;
+}
+
+.inicioSesion{
+	float:right;
+}
+
 @media (max-width: 768px){
+	.navbar-default .navbar-nav > li > a {
+		text-align: right;
+	}
+	
+	
   .evento{
     display: block;
     width: 80%;
@@ -102,4 +116,10 @@ section{
   p{
     margin-top: 4%;
   }
+	
+	.izquierda{
+		margin: 4%;
+		float: inherit;
+		padding: 0;
+	}
 }
