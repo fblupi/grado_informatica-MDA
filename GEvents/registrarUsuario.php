@@ -66,7 +66,7 @@ $sql = "INSERT INTO usuario (login, correo, pass, nombre, apellidos, direccion,
 
 $resultado = mysqli_query($conexion, $sql);
 mysqli_close($conexion);
-echo $sql;
+
 if(!$resultado){
 	salir("El usuario ya existe", -1);
 }else{
