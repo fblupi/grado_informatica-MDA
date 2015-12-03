@@ -55,6 +55,10 @@ section{
 	float:right;
 }
 
+.has-feedback label ~ .form-control-feedback {
+    top: 0;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
@@ -122,4 +126,8 @@ section{
 		float: inherit;
 		padding: 0;
 	}
+	
+	.has-feedback label ~ .form-control-feedback {
+    top: 25px;
+}
 }
