@@ -79,7 +79,7 @@ if(!$resultado){
 function salir($str, $code) {
     echo '<script>
             alert("' . $str . '");
-            //location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
+            location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
         </script>';
     return $code;
 }
