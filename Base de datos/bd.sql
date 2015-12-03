@@ -7,6 +7,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mda
 -- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `mda` ;
 
 -- -----------------------------------------------------
 -- Schema mda
@@ -28,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `mda`.`Usuario` (
   `telefono` VARCHAR(45) NULL,
   `localizacion` VARCHAR(45) NULL,
   `fechaNacimiento` DATE NULL,
+  `imagen` VARCHAR(45) NULL DEFAULT 'assets/img/usuario.png',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `login_UNIQUE` (`login` ASC),
   UNIQUE INDEX `correo_UNIQUE` (`correo` ASC))
@@ -44,6 +46,7 @@ CREATE TABLE IF NOT EXISTS `mda`.`Evento` (
   `lugar` VARCHAR(45) NOT NULL,
   `fechaInicio` DATE NOT NULL,
   `fechaFin` DATE NOT NULL,
+  `imagen` VARCHAR(45) NULL DEFAULT 'assets/img/evento.png',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -81,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `mda`.`Cuenta` (
   `cantidad` INT NOT NULL DEFAULT 1,
   `evento` INT NOT NULL,
   `tipo` INT NOT NULL,
+  `fecha` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Inversion_Evento1_idx` (`evento` ASC),
   CONSTRAINT `fk_Inversion_Evento1`
@@ -89,6 +93,7 @@ CREATE TABLE IF NOT EXISTS `mda`.`Cuenta` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `mda`.`Actividad`
@@ -102,6 +107,7 @@ CREATE TABLE IF NOT EXISTS `mda`.`Actividad` (
   `precio` FLOAT NULL,
   `evento` INT NOT NULL,
   `estado` VARCHAR(45) NOT NULL DEFAULT 'activa',
+  `imagen` VARCHAR(45) NULL DEFAULT 'assets/img/actividad.png',
   PRIMARY KEY (`id`),
   INDEX `fk_Actividad_Evento1_idx` (`evento` ASC),
   CONSTRAINT `fk_Actividad_Evento1`
@@ -130,6 +136,7 @@ CREATE TABLE IF NOT EXISTS `mda`.`Producto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `mda`.`Comentario`

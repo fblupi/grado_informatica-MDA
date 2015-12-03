@@ -64,15 +64,13 @@ $sql = "INSERT INTO usuario (login, correo, pass, nombre, apellidos, direccion,
 	$correo . ", " . $pass . ", " . $nombre . ", " . $apellidos . ", " . $direccion . ", "
 	. $telefono . ", " . $localizacion . ", " . $fechaNacimiento . ", " . $imagen . ";";
 
-$resultado = mysqli_query($conexion, $sql);
-mysqli_close($conexion);
-
-if(!$resultado){
-	salir("El usuario ya existe", -1);
-}else{
+if(mysqli_query($conexion, $sql)){
+	mysqli_close($conexion);
 	$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.
 	//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
 	salir("Se ha registrado correctamente", 0);
+}else{
+		salir("El usuario ya existe", -1);
 }
 
 
