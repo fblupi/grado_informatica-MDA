@@ -31,7 +31,7 @@
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-default inicioSesion">Regístrate</button>
 				</div>
-
+				<small class="izquierda">¿Ya estás registrado?<a href="signin.php"> Inicia sesión</a></small>
 			</div>
 		</form>
 </article>

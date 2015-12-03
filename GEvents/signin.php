@@ -19,8 +19,10 @@
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-default inicioSesion">Iniciar Sesión</button>
 				</div>
-				<small class="izquierda"><a href="recordarPass.php">¿Has olvidado tu contraseña?</a></small><br>
-				<small class="izquierda"><a href="registro.php">Regístrate</a></small>
+				<small class="izquierda">Si no tienes cuenta, <a href="registro.php">regístrate</a></small>
+				<br>
+				<small class="izquierda"><a href="recordarPass.php">¿Has olvidado tu contraseña?</a></small>
+				
 
 			</div>
 		</form>
