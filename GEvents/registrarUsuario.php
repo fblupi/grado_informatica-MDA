@@ -60,24 +60,26 @@ if(!empty($_FILES['imagen'])){
 
 $conexion = dbConnect();
 $sql = "INSERT INTO usuario (login, correo, pass, nombre, apellidos, direccion,
-	telefono, localizacion, fechaNacimiento, imagen) VALUES " . $login . ", " .
-	$correo . ", " . $pass . ", " . $nombre . ", " . $apellidos . ", " . $direccion . ", "
-	. $telefono . ", " . $localizacion . ", " . $fechaNacimiento . ", " . $imagen . ";";
+	telefono, localizacion, fechaNacimiento, imagen) VALUES ('" . $login . "', '" .
+	$correo . "', '" . $pass . "', '" . $nombre . "', '" . $apellidos . "', '" . $direccion . "', '"
+	. $telefono . "', '" . $localizacion . "', '" . $fechaNacimiento . "', '" . $imagen . "');";
 
-if(mysqli_query($conexion, $sql)){
-	mysqli_close($conexion);
+$resultado = mysqli_query($conexion, $sql);
+mysqli_close($conexion);
+echo $sql;
+if(!$resultado){
+	salir("El usuario ya existe", -1);
+}else{
 	$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.
 	//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
 	salir("Se ha registrado correctamente", 0);
-}else{
-		salir("El usuario ya existe", -1);
 }
 
 
 function salir($str, $code) {
     echo '<script>
             alert("' . $str . '");
-            location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
+            //location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
         </script>';
     return $code;
 }
