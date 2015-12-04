@@ -55,10 +55,6 @@ section{
 	float:right;
 }
 
-.has-feedback label ~ .form-control-feedback {
-    top: 0;
-}
-
 .divInicioSesion{
 	display: block;
   margin: 0 auto;
@@ -83,10 +79,6 @@ section{
     order: 2;
   }
 
-  section{
-    padding: 30 !important;
-  }
-
   .nombreEvento{
     margin-left: 3%;
     -webkit-box-ordinal-group: 1;
@@ -100,7 +92,7 @@ section{
     -webkit-box-ordinal-group: 2;
     -moz-box-ordinal-group: 2;
     -ms-flex-order: 2;
-    -webkit-order: 2;
+    -webkit-order: 2; 
     order: 2;
   }
 
