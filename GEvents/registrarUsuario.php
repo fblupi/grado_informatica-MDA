@@ -8,7 +8,7 @@ if (!isset($_SESSION['login'])) {//Si no se puede acceder a $_SESSION['login'] e
 
 $login = $_POST['login'];
 $correo = $_POST['correo'];
-$pass = $_POST['pass'];
+$pass = md5($_POST['pass']);
 $nombre = "";
 $apellidos = "";
 $direccion = "";
@@ -35,22 +35,24 @@ if (!empty($_POST['localizacion'])) {
 if (!empty($_POST['fechaNacimiento'])) {
 	$fechaNacimiento = $_POST['fechaNacimiento'];
 }
-if(!empty($_FILES['imagen'])){
-	if ($_FILES['imagen']["error"] > 0) {
+$subidaCorrecta = false;
+if(isset($_FILES['imagen'])){
+	if ($_FILES['imagen']['error'] > 0) {
         salir("Ha ocurrido un error en la carga de la imagen", -2);
     } else {
-        $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
+        $permitidos = array("image/jpg", "image/jpeg", "image/png");
         $limite_kb = 2048;
         if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024) {
-            $carpeta = "./images/users";
+            $carpeta = "assets/img/users";
             if (!is_dir($carpeta)) {
                 mkdir($carpeta);
             }
-            $nombre_archivo = $login . ' - ' . $_FILES['imagen']['name'];
-            $ruta = $carpeta . "/" . $nombre_archivo;
+            $formato = "." . split("/", $_FILES['imagen']['type'])[1];
+            $nombreArchivo = $login . $formato;
+            $ruta = $carpeta . "/" . $nombreArchivo;
             if (!file_exists($ruta)) {
-                $resultado_subida = @move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
-                if ($resultado_subida) {
+                $subidaCorrecta = @move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
+                if($subidaCorrecta){
                     $imagen = $ruta;
                 }
             }
@@ -68,6 +70,9 @@ $resultado = mysqli_query($conexion, $sql);
 mysqli_close($conexion);
 
 if(!$resultado){
+    if($subidaCorrecta){//Si no se ha podido registrar borra la foto en caso de que se haya subido.
+        unlink($ruta);
+    }
 	salir("El usuario ya existe", -1);
 }else{
 	$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.
