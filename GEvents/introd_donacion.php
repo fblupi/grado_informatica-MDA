@@ -24,7 +24,7 @@
 				$query="INSERT INTO cuenta( concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES ('$concepto','$importe','$descripcion','$cantidad','$id_evento','$tipo','$fecha');";
 				$resultado = mysqli_query($conexion, $query);
 				//Añadimos el producto al evento 
-				$query2="INSERT INTO producto(nombre, precioCompra, precioVenta, cantidad, evento) VALUES ('',0,'$importe','$cantidad','$id_evento');";
+				$query2="INSERT INTO producto(nombre, precioCompra, precioVenta, cantidad, evento) VALUES ('$concepto',0,'$importe','$cantidad','$id_evento');";
 				$resultado = mysqli_query($conexion, $query2);
 		}
 
