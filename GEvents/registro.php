@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 <body>
-<section>
+<section class="divInicioSesion">
 <article>
 	<form class="form-signin" method="POST" action="registrarUsuario.php" data-toggle="validator" role="form" enctype="multipart/form-data">
 			<div class="form-group has-feedback">
@@ -49,7 +49,7 @@
 			</div>
 		<div class="form-group">
 				<label>Imagen de perfil</label>
-					<input type="file" class="form-control" id="imagen" name="imagen[]">
+					<input type="file" class="form-control" id="imagen" name="imagen">
 		</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
