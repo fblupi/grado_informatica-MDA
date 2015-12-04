@@ -1,20 +1,16 @@
 <?php include 'header.php'; ?>
 <body>
-<section>
+<section class="divInicioSesion">
 	<article>
 		<form class="form-horizontal" method="POST" action="#" data-toggle="validator" role="form">
 			<div class="form-group has-feedback">
-				<label class="col-sm-2 control-label">Nombre de usuario</label>
-				<div class="col-sm-10">
+				<label>Nombre de usuario</label>
 					<input type="text" class="form-control" id="login" name="login" placeholder="Nombre de usuario" required>
-				</div>
 				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 			</div>
 			<div class="form-group has-feedback">
-				<label class="col-sm-2 control-label">Contraseña</label>
-				<div class="col-sm-10">
+				<label>Contraseña</label>
 					<input type="password" class="form-control" id="pass" name="pass" data-minlength="6" placeholder="Contraseña" required>
-				</div>
 				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 			</div>
 			<div class="form-group">

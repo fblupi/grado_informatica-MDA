@@ -24,7 +24,7 @@ body{
 }
 
 section{
-  padding: 80 !important;
+  padding: 20 !important;
 }
 
 .evento{
@@ -59,6 +59,12 @@ section{
     top: 0;
 }
 
+.divInicioSesion{
+	display: block;
+  margin: 0 auto;
+  width: 60%;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
@@ -78,8 +84,7 @@ section{
   }
 
   section{
-    padding: 20 !important;
-    margin-top: 10%;
+    padding: 30 !important;
   }
 
   .nombreEvento{
@@ -122,12 +127,16 @@ section{
   }
 	
 	.izquierda{
-		margin: 4%;
+		margin: 0;
 		float: inherit;
 		padding: 0;
 	}
 	
 	.has-feedback label ~ .form-control-feedback {
     top: 25px;
-}
+	}
+	
+	.divInicioSesion{
+		width: 100%;
+	}
 }
