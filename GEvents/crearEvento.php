@@ -2,7 +2,7 @@
 
 include_once "dbConnect.php";
 
-//inserto en evento, cojo su id e inserto en organizador la pareja usuario-evento
+//inserto en evento, cojo su id e inserto en Organizador la pareja usuario-evento
 
 $idUsuario = $_SESSION["idUsuario"];
 $nombre = $_POST["nombre"];
@@ -12,8 +12,9 @@ $fechaInicio = $_POST["fechaInicio"];
 $fechaFin = $_POST["fechaFin"];
 $imagen = $_POST['imagen'];
 
-if (!empty('idUsuario') && !empty('nombre') && !empty('dscripcion') &&
-        !empty('lugar') && !empty('fechaInicio') && !empty('fechaFin') && !empty('imagen')) {
+//si las variables no están vacías
+if (!empty($idUsuario) && !empty($nombre) && !empty($descripcion) &&
+        !empty($lugar) && !empty($fechaInicio) && !empty($fechaFin) && !empty($imagen)) {
 
     //realizo la conexión
     $conexion = dbConnect();
@@ -23,12 +24,12 @@ if (!empty('idUsuario') && !empty('nombre') && !empty('dscripcion') &&
                 VALUES ('" + $nombre + "', '" + $descripcion + "', '" + $lugar + "', '" +
             $fechaInicio + "', '" + $fechaFin + "', '" + $imagen + "')";
 
-    //almaceno en $resultado
+    //almaceno el estado de la inserción en $resultado
     $resultado = mysqli_query($conexion, $sql);
 
     //si hay error al insertar el evento, muestro el error y salgo
     if (!$resultado) {
-        salir('<br>ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
+        salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
 
     //si no hay error, intento coger su id
     } else {
@@ -36,11 +37,12 @@ if (!empty('idUsuario') && !empty('nombre') && !empty('dscripcion') &&
                 $descripcion + "' AND lugar='" + $lugar + "' AND fechaInicio='" +
                 $fechaInicio + "' AND fechaFin='" + $fechaFin + "' AND imagen='" + $imagen + "'";
 
+        //almaceno el estado de la consulta en $resultado
         $resultado = mysqli_query($conexion, $sql);
 
         //si hay error al intentar coger el id, muestro el error y salgo
         if (!$resultado) {
-            salir('<br>ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
+            salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
             
         //si no hay error, inserto la pareja usuario-evento en la tabla Organizador
         } else {
@@ -48,11 +50,12 @@ if (!empty('idUsuario') && !empty('nombre') && !empty('dscripcion') &&
 
             $sql = "INSERT INTO Organizador (usuario, evento) VALUES ('" + $idUsuario + "', '" + $registro['id'] + "')";
 
+            //almaceno el estado de la inserción en $resultado
             $resultado = mysql_query($sql, $conexion);
 
             //si hay error lo muestro
             if (!$resultado) {
-                salir('<br>ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
+                salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
             
             //si se llega hasta aquí el evento se ha creado correctamente
             } else {
@@ -62,6 +65,7 @@ if (!empty('idUsuario') && !empty('nombre') && !empty('dscripcion') &&
     }
 }
 
+//cierra la conexión, muestra el resultado y devuelve el control a la página desde la que se referencia
 function salir($str, $code) {
     mysqli_close($conexion);
     echo '<script>
