@@ -19,8 +19,11 @@ if (!empty($concepto) && !empty($descripcion) && !empty($precioCompra) &&!empty(
                 $cantidad + "', '" + $evento + "', '" + $tipo + "', '" + $fecha + "');";
   $sqlProducto = "INSERT INTO Producto (nombre, precioCompra, precioVenta, cantidad, evento)
                   VALUES ('" + $concepto + "', '" + $precioCompra + "', '" + $precioVenta + "', '" + $cantidad + "', '" + $evento + "');";
-  if ($sqlCuenta) {
-    if ($sqlProducto) {
+  $resultadoCuenta = mysqli_query($conexion, $sqlCuenta);
+  $resultadoProducto = mysqli_query($conexion, $sqlProducto);
+  mysqli_close($conexion);
+  if ($resultadoCuenta) {
+    if ($resultadoProducto) {
       salir("La inversión se ha introducido correctamente", 0);
     } else {
       salir("Error introduciendo la inversión. No se pudo realizar la operación: " . $sqlProducto . "<br>" . mysql_error(), -1);
@@ -33,7 +36,6 @@ if (!empty($concepto) && !empty($descripcion) && !empty($precioCompra) &&!empty(
 }
 
 function salir($str, $code) {
-  mysqli_close($conexion);
   echo '<script>
     alert("' . $str . '");
     location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
