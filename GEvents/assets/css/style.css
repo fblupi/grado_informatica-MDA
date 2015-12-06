@@ -35,6 +35,22 @@ section{
   padding-right: 15px;
   padding-left: 15px;
   margin-top: 2%;
+	border-radius: 50%; /* Borde redondeado */
+	box-shadow: 0px 0px 2px #000; /* Sombra */
+	padding:0;
+	border:0;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+}
+
+.evento:hover{
+	box-shadow: 0; /* Con esto eliminamos la sombra */
+	border-radius: 0; /* Con esto eliminamos el borde redondeado */
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+	cursor:pointer;
 }
 
 .nombreEvento{
@@ -76,12 +92,28 @@ section{
     width: 80%;
     float: inherit;
     margin: 0 auto;
+		border-radius: 50%; /* Borde redondeado */
+		box-shadow: 0px 0px 2px #000; /* Sombra */
+		padding:0;
+		border:0;
+		-moz-transition: all 1s;
+		-webkit-transition: all 1s;
+		-o-transition: all 1s;
     -webkit-box-ordinal-group: 2;
     -moz-box-ordinal-group: 2;
     -ms-flex-order: 2;
     -webkit-order: 2;
     order: 2;
   }
+	
+	.evento:hover{
+		box-shadow: 0; /* Con esto eliminamos la sombra */
+		border-radius: 0; /* Con esto eliminamos el borde redondeado */
+		-moz-transition: all 1s;
+		-webkit-transition: all 1s;
+		-o-transition: all 1s;
+		cursor:pointer;
+	}
 
   .nombreEvento{
     margin-left: 3%;

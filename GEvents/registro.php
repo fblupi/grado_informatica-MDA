@@ -1,4 +1,8 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+if(isset($_SESSION['login'])){
+	echo '<script>location.href="index.php";</script>';
+}
+?>
 <body>
 <section class="divInicioSesion">
 <article>
