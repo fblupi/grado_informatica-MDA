@@ -1,5 +1,6 @@
 <html lang="es">
 <head>
+<?php if(!isset($_SESSION)){ session_start();} ?>
 <meta charset="utf-8">
 <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

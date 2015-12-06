@@ -1,5 +1,5 @@
-<?php include 'header.php'; 
-if(isset($_SESSION['login'])){
+<?php include 'header.php'; ?>
+<?php if(isset($_SESSION['login'])){
 	echo '<script>location.href="index.php";</script>';
 }
 ?>
@@ -24,7 +24,7 @@ if(isset($_SESSION['login'])){
 				<small class="izquierda">Si no tienes cuenta, <a href="registro.php">regístrate</a></small>
 				<br>
 				<small class="izquierda"><a href="recordarPass.php">¿Has olvidado tu contraseña?</a></small>
-				
+
 
 			</div>
 		</form>
