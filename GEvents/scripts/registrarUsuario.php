@@ -44,14 +44,14 @@ if(isset($_FILES['imagen'])){
         $limite_kb = 2048;
         if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024) {
             $carpeta = "assets/img/users";
-            if (!is_dir($carpeta)) {
-                mkdir($carpeta);
+            if (!is_dir("../" . $carpeta)) {
+                mkdir("../" . $carpeta, 0777, true);
             }
             $formato = "." . split("/", $_FILES['imagen']['type'])[1];
             $nombreArchivo = $login . $formato;
             $ruta = $carpeta . "/" . $nombreArchivo;
-            if (!file_exists($ruta)) {
-                $subidaCorrecta = @move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
+            if (!file_exists("../" . $ruta)) {
+                $subidaCorrecta = @move_uploaded_file($_FILES['imagen']['tmp_name'], "../" . $ruta);
                 if($subidaCorrecta){
                     $imagen = $ruta;
                 }
@@ -78,6 +78,4 @@ if(!$resultado){
 	$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.
 	//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
 	salir("Se ha registrado correctamente", 0);
-}
-
 }
