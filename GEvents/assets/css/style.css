@@ -100,6 +100,13 @@ section{
 	display: inline !important;
 }
 
+.ayudaEsconder{
+	display: none;
+}
+
+.ayudaMostrar{
+	display: inline !important;
+}
 
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
@@ -186,7 +193,7 @@ section{
 	
 	.divInicioSesion{
 		width: 90%;
-	}
+	} 
 	
 	.buscarEventos{
 		width: 80%;

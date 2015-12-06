@@ -8,6 +8,7 @@
           <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
           <input type="text" id="busqueda" name="busqueda" onkeyup="MostrarConsultaEventos();" class="form-control" placeholder="Buscar...">
         </div>
+        <span class="help-block ayudaEsconder" id="ayuda">Puedes realizar la búsqueda por nombre o por lugar </span>
        </form>
        </div>
       <article>
