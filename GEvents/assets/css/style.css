@@ -112,6 +112,12 @@ section{
 	margin-right: 1%;
 }
 
+.alertas{
+	margin: 0 auto;
+	display: block;
+	width: 90%;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;

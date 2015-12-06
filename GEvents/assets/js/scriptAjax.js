@@ -13,3 +13,20 @@ function MostrarConsultaEventos() {
             }
     });
 }
+
+function IniciarSesion(){
+    var login = $('#login').val();
+		var pass = $('#pass').val();
+    var parametros = {
+        login : login,
+				pass : pass
+    };
+    $.ajax({
+            data:  parametros,
+            url:   'scripts/login.php',
+            type:  'POST',
+            success:  function (response) {
+                    $("#resultado").html(response);
+            }
+    });
+}

@@ -1,6 +1,6 @@
 <?php include 'header.php'; 
 if(!isset($_SESSION['login'])){
-	echo '<script>location.href="inicioSesion.php";</script>';
+	echo '<script>location.href="signin.php";</script>';
 }
 ?>
 <body>

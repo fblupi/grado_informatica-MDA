@@ -1,6 +1,6 @@
 <?php include 'header.php'; 
 if(!isset($_SESSION['login'])){
-	echo '<script>location.href="inicioSesion.php";</script>';
+	echo '<script>location.href="signin.php";</script>';
 }
 ?>
 <body>
@@ -30,7 +30,7 @@ if(!isset($_SESSION['login'])){
 					echo '</div>';
 					echo '<div class="form-group has-feedback">';
 					echo '<label>Apellidos: </label>';
-					echo '<input type="text" class="form-control" id="nombre" name="nombre" value="';
+					echo '<input type="text" class="form-control" id="apellidos" name="apellidos" value="';
 					echo $usuario['apellidos'];
 					echo '" maxlength="45" required>';
 					echo '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>';

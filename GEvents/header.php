@@ -39,3 +39,4 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div id="resultado" class="alertas"></div>
