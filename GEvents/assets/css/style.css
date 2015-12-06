@@ -24,7 +24,7 @@ body{
 }
 
 section{
-  padding: 20 !important;
+  padding: 0 16% !important;
 }
 
 .evento{
@@ -140,4 +140,9 @@ section{
 		width: 80%;
 		margin: 0 auto;
 	}
+	
+	section{
+		padding: 0 5% !important;
+	}
+	
 }
