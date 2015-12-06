@@ -20,6 +20,9 @@
 				$resultado = mysqli_query($conn, $sql);
 				while($eventos = mysqli_fetch_assoc($resultado)){
 					echo '<div class="contenidoEvento row">';
+					echo '<a class="contenidoEvento linkEventos" href="evento.php?i=';
+					echo $eventos['id'];
+					echo '">';
 					echo '<img class="evento" src="';
 					echo $eventos['imagen'];
 					echo '">';
@@ -36,7 +39,11 @@
 					echo date('j F, Y', $fechaInicio). ' - '.date('j F, Y', $fechaFin);
 					echo '</p>';
 					echo '<p>';
-					echo $eventos['descripcion'];
+					$descripcion = explode(".",$eventos['descripcion']);
+					echo $descripcion[0].'.';
+					echo $descripcion[1].'.';
+					echo $descripcion[2];
+					echo '...';
 					echo '</p>';
 					echo '</div>';
 					echo '</div>';

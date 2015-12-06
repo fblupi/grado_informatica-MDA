@@ -78,4 +78,8 @@ if(!$resultado){
 	$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.
 	//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
 	salir("Se ha registrado correctamente", 0);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
