@@ -207,4 +207,19 @@ section{
 	h1{
 		font-size: 24px;
 	}
+	
+	h2{
+		font-size: 20px;
+	}
+	
+	.usuario{
+		margin: 0 auto;
+		display: block;
+	}
+	
+	.miCuenta{
+		margin: 0 auto;
+		width: 90%;
+		
+	}
 }
