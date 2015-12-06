@@ -108,6 +108,10 @@ section{
 	display: inline !important;
 }
 
+.editarPerfil{
+	margin-right: 1%;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
@@ -219,7 +223,10 @@ section{
 	
 	.miCuenta{
 		margin: 0 auto;
-		width: 90%;
-		
+		width: 90%;	
+	}
+	
+	.editarPerfil{
+		margin-right: 4%;
 	}
 }
