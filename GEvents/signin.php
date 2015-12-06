@@ -27,5 +27,4 @@
 	</article>
 </section>
 </body>
-
 <?php include 'footer.php'; ?>

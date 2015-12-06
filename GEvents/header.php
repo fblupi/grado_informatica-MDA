@@ -29,12 +29,6 @@
       <ul class="nav navbar-nav navbar-right">
 					<?php if(isset($_SESSION)){ echo '<li><a href="#"><i class="fa fa-user usuario"></i>Mi cuenta</a></li>'; } else { echo '<li><a href="signin.php"><i class="fa fa-user usuario"></i>Identifícate</a></li>'; } ?>
       </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
-          <input type="text" class="form-control" placeholder="Buscar">
-        </div>
-       </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

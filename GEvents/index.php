@@ -2,6 +2,14 @@
 <body>
   <section>
       <h1>Eventos<hr></h1>
+      <div class="buscarEventos">
+      <form role="search">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
+          <input type="text" class="form-control" placeholder="Buscar...">
+        </div>
+       </form>
+       </div>
       <article>
         <div class="contenidoEvento row">
           <img class="evento" src="assets/img/evento.png">

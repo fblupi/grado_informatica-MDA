@@ -61,6 +61,10 @@ section{
   width: 60%;
 }
 
+.buscarEventos{
+	width: 35%;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
@@ -130,5 +134,10 @@ section{
 	
 	.divInicioSesion{
 		width: 90%;
+	}
+	
+	.buscarEventos{
+		width: 80%;
+		margin: 0 auto;
 	}
 }
