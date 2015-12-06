@@ -31,7 +31,8 @@
 			<ul class="nav navbar-nav navbar-right">
 					<?php 
 				if(isset($_SESSION['login'])){ 
-					echo '<li><a href="miCuenta.php"><i class="fa fa-user usuario"></i>Mi cuenta</a></li>'; } 
+					echo '<li><a href="miCuenta.php"><i class="fa fa-user usuario"></i>Mi cuenta</a></li>';
+					echo '<li><a href="scripts/cerrarSesion.php">Cerrar sesión</a></li>';} 
 				else { 
 					echo '<li><a href="signin.php"><i class="fa fa-user usuario"></i>Identifícate</a></li>'; } ?>
       </ul>
