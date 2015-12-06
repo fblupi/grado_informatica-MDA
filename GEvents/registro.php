@@ -4,7 +4,7 @@ if(isset($_SESSION['login'])){
 }
 ?>
 <body>
-<section class="divInicioSesion">
+<section class="divInicioSesion animated flipInY">
 <article>
 	<form class="form-signin" method="POST" action="scripts/registrarUsuario.php" data-toggle="validator" role="form" enctype="multipart/form-data">
 			<div class="form-group has-feedback">

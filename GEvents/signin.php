@@ -1,6 +1,10 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+if(isset($_SESSION['login'])){
+	echo '<script>location.href="index.php";</script>';
+}
+?>
 <body>
-<section class="divInicioSesion">
+<section class="divInicioSesion animated flipInY">
 	<article>
 		<form class="form-horizontal" method="POST" action="scripts/login.php" data-toggle="validator" role="form">
 			<div class="form-group has-feedback">

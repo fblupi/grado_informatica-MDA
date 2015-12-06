@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 <body>
-  <section>
+  <section class="animated zoomIn">
       <h1>Eventos<hr></h1>
       <div class="buscarEventos">
       <form role="search">

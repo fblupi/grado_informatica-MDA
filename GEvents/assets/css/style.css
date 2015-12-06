@@ -89,6 +89,18 @@ section{
 	text-decoration: none;
 }
 
+.eventoCompletoImg{
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	float: none;
+}
+
+.lugarEventoEtiqueta{
+	display: inline !important;
+}
+
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
@@ -185,4 +197,7 @@ section{
 		padding: 0 5% !important;
 	}
 	
+	h1{
+		font-size: 24px;
+	}
 }
