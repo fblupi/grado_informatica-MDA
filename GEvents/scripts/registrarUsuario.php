@@ -36,14 +36,14 @@ if (!empty($_POST['fechaNacimiento'])) {
 	$fechaNacimiento = $_POST['fechaNacimiento'];
 }
 $subidaCorrecta = false;
-if(isset($_FILES['imagen'])){
+if(isset($_FILES['imagen']) && $_FILES['imagen']['name']){
 	if ($_FILES['imagen']['error'] > 0) {
         salir("Ha ocurrido un error en la carga de la imagen", -2);
     } else {
         $permitidos = array("image/jpg", "image/jpeg", "image/png");
         $limite_kb = 2048;
         if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024) {
-            $carpeta = "assets/img/users";
+            $carpeta = "../assets/img/users";
             if (!is_dir($carpeta)) {
                 mkdir($carpeta);
             }
@@ -53,7 +53,7 @@ if(isset($_FILES['imagen'])){
             if (!file_exists($ruta)) {
                 $subidaCorrecta = @move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
                 if($subidaCorrecta){
-                    $imagen = $ruta;
+                    $imagen = substr($ruta, 3); //para que quite el ../
                 }
             }
         }
@@ -78,6 +78,4 @@ if(!$resultado){
 	$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.
 	//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
 	salir("Se ha registrado correctamente", 0);
-}
-
 }
