@@ -2,7 +2,7 @@
 <body>
 <section class="divInicioSesion">
 <article>
-	<form class="form-horizontal" method="POST" action="#" data-toggle="validator" role="form">
+	<form class="form-horizontal" method="POST" action="scripts/recordarPass.php" data-toggle="validator" role="form">
 			<div class="form-group">
 				<label>Nombre de usuario</label>
 					<input type="text" class="form-control" id="login" name="login" placeholder="Nombre de usuario">

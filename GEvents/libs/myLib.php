@@ -13,3 +13,11 @@
     }
     return $conn;
 }
+
+function salir($str, $code) {
+    echo '<script>
+            alert("' . $str . '");
+            location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
+        </script>';
+    return $code;
+}

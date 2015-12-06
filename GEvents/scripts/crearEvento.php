@@ -1,6 +1,6 @@
 <?php
 
-include_once "dbConnect.php";
+include_once "../libs/myLib.php";
 
 //inserto en evento, cojo su id e inserto en Organizador la pareja usuario-evento
 
@@ -55,10 +55,12 @@ if (!empty($idUsuario) && !empty($nombre) && !empty($descripcion) &&
 
             //si hay error lo muestro
             if (!$resultado) {
+							  mysqli_close($conexion);
                 salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
             
             //si se llega hasta aquí el evento se ha creado correctamente
-            } else {
+            } else 
+							  mysqli_close($conexion);
                 salir('Se creó el evento correctamente', 0);
             }
         }
@@ -66,13 +68,5 @@ if (!empty($idUsuario) && !empty($nombre) && !empty($descripcion) &&
 }
 
 //cierra la conexión, muestra el resultado y devuelve el control a la página desde la que se referencia
-function salir($str, $code) {
-    mysqli_close($conexion);
-    echo '<script>
-            alert("' . $str . '");
-            location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
-        </script>';
-    return $code;
-}
 
 ?>

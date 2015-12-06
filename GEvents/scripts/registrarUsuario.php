@@ -1,6 +1,6 @@
 <?php
 
-include_once "dbConnect.php";
+include_once "../libs/myLib.php";
 
 if (!isset($_SESSION['login'])) {//Si no se puede acceder a $_SESSION['login'] es porque hace falta iniciar sesión.
     session_start();
@@ -80,11 +80,4 @@ if(!$resultado){
 	salir("Se ha registrado correctamente", 0);
 }
 
-
-function salir($str, $code) {
-    echo '<script>
-            alert("' . $str . '");
-            location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
-        </script>';
-    return $code;
 }

@@ -1,6 +1,6 @@
 <?php
 
-include_once "dbConnect.php";
+include_once "../libs/myLib.php";
 
 $concepto = $_POST['concepto'];
 $descripcion = $_POST['descripcion'];
@@ -24,23 +24,19 @@ if (!empty($concepto) && !empty($descripcion) && !empty($precioCompra) &&!empty(
   mysqli_close($conexion);
   if ($resultadoCuenta) {
     if ($resultadoProducto) {
+			mysqli_close($conexion);
       salir("La inversión se ha introducido correctamente", 0);
     } else {
+    	mysqli_close($conexion);
       salir("Error introduciendo la inversión. No se pudo realizar la operación: " . $sqlProducto . "<br>" . mysql_error(), -1);
     }
   } else {
+	   mysqli_close($conexion);
     salir("Error introduciendo la inversión. No se pudo realizar la operación: " . $sqlCuenta . "<br>" . mysql_error(), -1);
   }
 } else {
   salir("No se ha podido introducir una inversión con esos datos", -1);
 }
 
-function salir($str, $code) {
-  echo '<script>
-    alert("' . $str . '");
-    location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
-  </script>';
-  return $code;
-}
 
 ?>

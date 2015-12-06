@@ -1,6 +1,6 @@
 <?php
 
-include_once "dbConnect.php";
+include_once "../libs/myLib.php";
 
 //introducir un registro en Cuenta sobre un evento con importe negativo (gasto)
 
@@ -28,22 +28,16 @@ if (!empty($concepto) && !empty($importe) && !empty($descripcion) &&
 
     //si hay error al insertar el gasto, muestro el error y salgo
     if (!$resultado) {
+    		mysqli_close($conexion);
         salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
 
     //si no hay error, muestro que se ha insertado correctamente
     } else {
+    		mysqli_close($conexion);
         salir('Se insertó el gasto correctamente', 0);        
     }
 }
 
 //cierra la conexión, muestra el resultado y devuelve el control a la página desde la que se referencia
-function salir($str, $code) {
-    mysqli_close($conexion);
-    echo '<script>
-            alert("' . $str . '");
-            location.href= " ' . $_SERVER['HTTP_REFERER'] . '";
-        </script>';
-    return $code;
-}
 
 ?>
