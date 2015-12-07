@@ -4,8 +4,8 @@ if(isset($_SESSION['login'])){
 }
 ?>
 <body>
-<section class="divInicioSesion animated flipInY">
-<article>
+<section id="divInicioSesion" class="divInicioSesion">
+<article class="animated rollIn">
 	<form class="form-signin" method="POST" id="formularioRegistroUsuario" name="formularioRegistroUsuario" action="" data-toggle="validator" enctype="multipart/form-data">
 			<div class="form-group has-feedback">
 				<label>Nombre de usuario</label>

@@ -1,12 +1,12 @@
-<?php include 'header.php'; 
+<?php include 'header.php';
 if(isset($_SESSION['login'])){
 	echo '<script>location.href="index.php";</script>';
 }
 ?>
 <body>
-<section class="divInicioSesion animated flipInY">
-<article>
-	<form class="form-horizontal" method="POST" action="scripts/recordarPass.php" data-toggle="validator" role="form">
+<section id="divInicioSesion" class="divInicioSesion">
+<article class="animated flipInY">
+	<form class="form-horizontal" id="formularioRecordarContraseña" name="formularioRecordarContraseña" method="POST" action="" data-toggle="validator" role="form">
 			<div class="form-group">
 				<label>Nombre de usuario</label>
 					<input type="text" class="form-control" id="login" name="login" placeholder="Nombre de usuario">

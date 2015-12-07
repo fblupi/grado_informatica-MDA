@@ -4,8 +4,8 @@
 }
 ?>
 <body>
-<section class="divInicioSesion animated flipInY">
-	<article>
+<section id="divInicioSesion" class="divInicioSesion">
+	<article class="animated rollIn">
 		<form class="form-horizontal" method="POST" action="" id="formularioInicioSesion" name="formularioInicioSesion" data-toggle="validator">
 			<div class="form-group has-feedback">
 				<label>Nombre de usuario</label>
@@ -24,8 +24,6 @@
 				<small class="izquierda">Si no tienes cuenta, <a href="registro.php">regístrate</a></small>
 				<br>
 				<small class="izquierda"><a href="recordarPass.php">¿Has olvidado tu contraseña?</a></small>
-
-
 			</div>
 		</form>
 	</article>
