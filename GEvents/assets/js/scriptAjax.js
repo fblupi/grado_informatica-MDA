@@ -16,15 +16,21 @@ function MostrarConsultaEventos() {
 
 $('#formularioInicioSesion').on('submit', function(e){
         e.preventDefault();
-				var login = $('#login').val();
-				var pass = $('#pass').val();
-		    var parametros = {
-		        login : login,
-						pass : pass
-		    };
 		    $.ajax({
-		            data:  parametros,
+		            data:  $("#formularioInicioSesion").serialize(),
 		            url:   'scripts/login.php',
+		            type:  'POST',
+		            success:  function (response) {
+		                    $("#resultado").html(response);
+		            }
+		    });
+    });
+
+$('#formularioRegistroUsuario').on('submit', function(e){
+        e.preventDefault();
+		    $.ajax({
+		            data:  $("#formularioRegistroUsuario").serialize(),
+		            url:   'scripts/registrarUsuario.php',
 		            type:  'POST',
 		            success:  function (response) {
 		                    $("#resultado").html(response);

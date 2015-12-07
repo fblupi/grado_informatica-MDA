@@ -1,4 +1,4 @@
-<?php include 'header.php'; 
+<?php include 'header.php';
 if(isset($_SESSION['login'])){
 	echo '<script>location.href="index.php";</script>';
 }
@@ -6,7 +6,7 @@ if(isset($_SESSION['login'])){
 <body>
 <section class="divInicioSesion animated flipInY">
 <article>
-	<form class="form-signin" method="POST" action="scripts/registrarUsuario.php" data-toggle="validator" role="form" enctype="multipart/form-data">
+	<form class="form-signin" method="POST" id="formularioRegistroUsuario" name="formularioRegistroUsuario" action="" data-toggle="validator" enctype="multipart/form-data">
 			<div class="form-group has-feedback">
 				<label>Nombre de usuario</label>
 				<input type="text" class="form-control" id="login" name="login" placeholder="Nombre de usuario" maxlength="10" required>

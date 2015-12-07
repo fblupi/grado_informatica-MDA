@@ -73,9 +73,9 @@ if(!$resultado){
     if($subidaCorrecta){//Si no se ha podido registrar borra la foto en caso de que se haya subido.
         unlink($ruta);
     }
-	salir("El usuario ya existe", -1);
+	salir2("El usuario ya existe", -1, 0);
 }else{
 	$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.
 	//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
-	salir("Se ha registrado correctamente", 0);
+	salir2("Se ha registrado correctamente", 0, "index");
 }

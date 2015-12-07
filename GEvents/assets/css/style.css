@@ -113,17 +113,22 @@ section{
 }
 
 .alertas{
-	margin: 0 auto;
-	display: block;
-	width: 90%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+}
+
+.form-horizontal .has-feedback .form-control-feedback{
+  right: 0;
 }
 
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
 	}
-	
-	
+
+
   .evento{
     display: block;
     width: 80%;
@@ -142,7 +147,7 @@ section{
     -webkit-order: 2;
     order: 2;
   }
-	
+
 	.evento:hover{
 		box-shadow: 0; /* Con esto eliminamos la sombra */
 		border-radius: 0; /* Con esto eliminamos el borde redondeado */
@@ -165,7 +170,7 @@ section{
     -webkit-box-ordinal-group: 2;
     -moz-box-ordinal-group: 2;
     -ms-flex-order: 2;
-    -webkit-order: 2; 
+    -webkit-order: 2;
     order: 2;
   }
 
@@ -190,48 +195,48 @@ section{
   p{
     margin-top: 4%;
   }
-	
+
 	.izquierda{
 		margin: 0;
 		float: inherit;
 		padding: 0;
 	}
-	
+
 	.has-feedback label ~ .form-control-feedback {
     top: 25px;
 	}
-	
+
 	.divInicioSesion{
 		width: 90%;
-	} 
-	
+	}
+
 	.buscarEventos{
 		width: 80%;
 		margin: 0 auto;
 	}
-	
+
 	section{
 		padding: 0 5% !important;
 	}
-	
+
 	h1{
 		font-size: 24px;
 	}
-	
+
 	h2{
 		font-size: 20px;
 	}
-	
+
 	.usuario{
 		margin: 0 auto;
 		display: block;
 	}
-	
+
 	.miCuenta{
 		margin: 0 auto;
-		width: 90%;	
+		width: 90%;
 	}
-	
+
 	.editarPerfil{
 		margin-right: 4%;
 	}
