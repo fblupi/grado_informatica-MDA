@@ -73,3 +73,15 @@ $('#formularioCrearEvento').on('submit', function(e){
             }
     });
 });
+
+$('#formularioEditarEvento').on('submit', function(e){
+    e.preventDefault();
+    $.ajax({
+            data:  $("#formularioEditarEvento").serialize(),
+            url:   'scripts/editarEvento.php',
+            type:  'POST',
+            success:  function (response) {
+                    $("#resultado").html(response);
+            }
+    });
+});

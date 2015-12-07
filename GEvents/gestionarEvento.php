@@ -17,7 +17,9 @@ if(isset($_GET['i'])){
 					echo 'Panel de control <small class="tituloGestionEvento">('.$eventos['nombre'].')</small>';
 					echo '<hr></h1>';
 					echo '<h2>Evento</h2>';
-					echo '<a href="editarEvento.php" class="btn btn-default btnGestionEvento">';
+					echo '<a href="editarEvento.php?i=';
+					echo $idEvento;
+					echo '" class="btn btn-default btnGestionEvento">';
 					echo 'Editar evento';
 					echo '</a>';
 					echo '<h2>Personal</h2>';
