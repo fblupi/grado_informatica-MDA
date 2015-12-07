@@ -133,7 +133,15 @@ section{
 }
 
 .gestionarEventos{
-	margin-left: 5%;
+	float: right;
+	margin-right: 40%;
+}
+
+.btnGestionEvento{
+	display: block;
+	width: 20%;
+	margin-bottom: 1%;
+	margin-top: 1%;
 }
 
 @media (max-width: 768px){
@@ -270,5 +278,18 @@ section{
 	.gestionarEventos{
 		margin-top: 5%;
 		margin-left: -1%;
+		float:none;
+	}
+	
+	.btnGestionEvento{
+		display: block;
+		width: 50%;
+		min-width: 200px;
+		margin-bottom: 1%;
+		margin-top: 1%;
+	}
+	
+	.tituloGestionEvento{
+		font-size: 14px;
 	}
 }
