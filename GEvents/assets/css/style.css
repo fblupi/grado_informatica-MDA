@@ -123,6 +123,15 @@ section{
   right: 0;
 }
 
+.imagenUsuario{
+	min-width: 200px;
+	min-height: 200px;
+}
+
+.botonesPerfil{
+	margin-bottom: 2%;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
@@ -239,5 +248,14 @@ section{
 
 	.editarPerfil{
 		margin-right: 4%;
+	}
+	
+	.botonesPerfil{
+		margin-bottom: 8%;
+	}
+	
+	.imagenUsuario{
+		min-width: 100px;
+		min-height: 100px;
 	}
 }

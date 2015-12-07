@@ -15,7 +15,7 @@ if(!isset($_SESSION['login'])){
 				$sql = "SELECT * FROM Usuario WHERE usuario.login = '$login';";
 				$resultado = mysqli_query($conn, $sql);
 				while($usuario = mysqli_fetch_assoc($resultado)){
-					echo '<img class="usuario" src="';
+					echo '<img class="imagenUsuario" src="';
 					echo $usuario['imagen'];
 					echo '">';
 					echo '<h2>';
@@ -47,8 +47,8 @@ if(!isset($_SESSION['login'])){
 					echo '</p>';
 				}
 				?>
-     	<a href="editarPerfil.php" class="btn btn-default">Editar perfil</a>
-     	<a href="cambiarPass.php" class="btn btn-danger">Cambiar contraseña</a>
+     	<a href="editarPerfil.php" class="btn btn-default botonesPerfil">Editar perfil</a>
+     	<a href="cambiarPass.php" class="btn btn-danger botonesPerfil">Cambiar contraseña</a>
       </article>
   </section>
 </body>
