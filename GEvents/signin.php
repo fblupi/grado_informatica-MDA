@@ -6,7 +6,7 @@
 <body>
 <section class="divInicioSesion animated flipInY">
 	<article>
-		<form class="form-horizontal" method="POST" action="" data-toggle="validator">
+		<form class="form-horizontal" method="POST" action="" id="formularioInicioSesion" name="formularioInicioSesion" data-toggle="validator">
 			<div class="form-group has-feedback">
 				<label>Nombre de usuario</label>
 					<input type="text" class="form-control" id="login" name="login" placeholder="Nombre de usuario" required>
@@ -19,7 +19,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-				<input type="button" name="iniciarSesion" class="btn btn-default inicioSesion" href="javascript:;" onclick="IniciarSesion();" value="Iniciar Sesión">
+				<input type="submit" name="iniciarSesion" class="btn btn-default inicioSesion" value="Iniciar Sesión">
 				</div>
 				<small class="izquierda">Si no tienes cuenta, <a href="registro.php">regístrate</a></small>
 				<br>
