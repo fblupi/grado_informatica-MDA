@@ -144,6 +144,14 @@ section{
 	margin-top: 1%;
 }
 
+.btnCrearEvento{
+	margin-bottom: 2%;
+}
+
+textarea{
+	resize: none;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
@@ -291,5 +299,9 @@ section{
 	
 	.tituloGestionEvento{
 		font-size: 14px;
+	}
+
+	.btnCrearEvento{
+		margin-bottom: 5%;
 	}
 }

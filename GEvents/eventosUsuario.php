@@ -7,6 +7,7 @@ if(!isset($_SESSION['login'])){
   <section>
       <h1>Mis eventos<hr></h1>
       <article>
+      <a href="crearEvento.php" class="btn btn-success btnCrearEvento" type="button">Crear evento</a>
       <div id="todosEventos">
        <?php 
 				include 'libs/myLib.php';

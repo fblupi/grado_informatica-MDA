@@ -1,5 +1,7 @@
 <?php
-
+if(!isset($_SESSION['idUsuario'])){
+  session_start();
+}
 include_once "../libs/myLib.php";
 
 //inserto en evento, cojo su id e inserto en Organizador la pareja usuario-evento
@@ -8,9 +10,17 @@ $idUsuario = $_SESSION["idUsuario"];
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["descripcion"];
 $lugar = $_POST["lugar"];
-$fechaInicio = $_POST["fechaInicio"];
-$fechaFin = $_POST["fechaFin"];
-$imagen = $_POST['imagen'];
+if (!empty($_POST['fechaInicio'])) {
+$fechaInicio = date('Y-m-d', strtotime($_POST['fechaInicio']));
+}
+if (!empty($_POST['fechaInicio'])) {
+$fechaFin = date('Y-m-d', strtotime($_POST['fechaFin']));
+}
+if(!empty($_POST['imagen'])){
+  $imagen = $_POST['imagen'];
+}else{
+  $imagen = 'assets/img/evento.png';
+}
 
 //si las variables no están vacías
 if (!empty($idUsuario) && !empty($nombre) && !empty($descripcion) &&
@@ -21,47 +31,38 @@ if (!empty($idUsuario) && !empty($nombre) && !empty($descripcion) &&
 
     //inserto los datos introducidos
     $sql = "INSERT INTO Evento (nombre, descripcion, lugar, fechaInicio, fechaFin, imagen)
-                VALUES ('" + $nombre + "', '" + $descripcion + "', '" + $lugar + "', '" +
-            $fechaInicio + "', '" + $fechaFin + "', '" + $imagen + "')";
-
-    //almaceno el estado de la inserción en $resultado
-    $resultado = mysqli_query($conexion, $sql);
+                VALUES ('$nombre', '$descripcion', '$lugar', '$fechaInicio', '$fechaFin', '$imagen')";
 
     //si hay error al insertar el evento, muestro el error y salgo
-    if (!$resultado) {
-        salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
+    if (!mysqli_query($conexion, $sql)) {
+        salir2('1 ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1, 0);
 
     //si no hay error, intento coger su id
     } else {
-        $sql = "SELECT id FROM Evento WHERE nombre='" + $nombre + "' AND descripcion='" +
-                $descripcion + "' AND lugar='" + $lugar + "' AND fechaInicio='" +
-                $fechaInicio + "' AND fechaFin='" + $fechaFin + "' AND imagen='" + $imagen + "'";
+        $sql = "SELECT id FROM Evento WHERE nombre='$nombre' AND descripcion='$descripcion' AND lugar='$lugar' AND fechaInicio='$fechaInicio' AND fechaFin='$fechaFin' AND imagen='$imagen'";
 
         //almaceno el estado de la consulta en $resultado
         $resultado = mysqli_query($conexion, $sql);
 
         //si hay error al intentar coger el id, muestro el error y salgo
         if (!$resultado) {
-            salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
-            
+            salir2('2 ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1, 0);
+
         //si no hay error, inserto la pareja usuario-evento en la tabla Organizador
         } else {
-            $registro = mysql_fetch_array($resultado);
-
-            $sql = "INSERT INTO Organizador (usuario, evento) VALUES ('" + $idUsuario + "', '" + $registro['id'] + "')";
-
-            //almaceno el estado de la inserción en $resultado
-            $resultado = mysql_query($sql, $conexion);
+            $registro = mysqli_fetch_assoc($resultado);
+            $idEvento = $registro['id'];
+            $sql = "INSERT INTO Organizador (usuario, evento) VALUES ('$idUsuario', '$idEvento');";
 
             //si hay error lo muestro
-            if (!$resultado) {
+            if (!mysqli_query($conexion, $sql)) {
 							  mysqli_close($conexion);
-                salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
-            
+                salir2('3 ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1, 0);
+
             //si se llega hasta aquí el evento se ha creado correctamente
-            } else 
+          } else {
 							  mysqli_close($conexion);
-                salir('Se creó el evento correctamente', 0);
+                salir2('Se creó el evento correctamente', 0, 'eventosUsuario');
             }
         }
     }

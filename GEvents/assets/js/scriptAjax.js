@@ -61,3 +61,15 @@ $('#formularioEditarPerfil').on('submit', function(e){
             }
     });
 });
+
+$('#formularioCrearEvento').on('submit', function(e){
+    e.preventDefault();
+    $.ajax({
+            data:  $("#formularioCrearEvento").serialize(),
+            url:   'scripts/crearEvento.php',
+            type:  'POST',
+            success:  function (response) {
+                    $("#resultado").html(response);
+            }
+    });
+});

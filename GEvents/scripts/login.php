@@ -13,6 +13,7 @@ if ($row = mysqli_fetch_array($resultado)) {
   if($row['pass'] == $pass) {
     session_start();
     $_SESSION['login'] = $login;
+    $_SESSION['idUsuario'] = $row['id'];
     mysqli_close($conexion);
     salir2("Se ha iniciado sesión correctamente", 0, "index");
   } else {
