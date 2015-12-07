@@ -60,6 +60,7 @@ section{
 
 .contenidoEvento{
   text-align: justify;
+  margin-bottom: 3%;
 }
 
 .izquierda{
@@ -150,6 +151,12 @@ section{
 
 textarea{
 	resize: none;
+}
+
+.btnVolver{
+  margin-left: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
 }
 
 @media (max-width: 768px){
@@ -269,26 +276,26 @@ textarea{
 	.editarPerfil{
 		margin-right: 4%;
 	}
-	
+
 	.botonesPerfil{
 		margin-bottom: 8%;
 	}
-	
+
 	.imagenUsuario{
 		min-width: 100px;
 		min-height: 100px;
 	}
-	
+
 	.navbar-nav .open .dropdown-menu{
 		text-align: right;
 	}
-	
+
 	.gestionarEventos{
 		margin-top: 5%;
 		margin-left: -1%;
 		float:none;
 	}
-	
+
 	.btnGestionEvento{
 		display: block;
 		width: 50%;
@@ -296,7 +303,7 @@ textarea{
 		margin-bottom: 1%;
 		margin-top: 1%;
 	}
-	
+
 	.tituloGestionEvento{
 		font-size: 14px;
 	}

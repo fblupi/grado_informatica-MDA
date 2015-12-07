@@ -56,7 +56,8 @@ if(!isset($_SESSION['login'])){
       		echo '<input type="file" class="form-control" id="imagen" name="imagen">';
           echo '<div class="form-group">';
           echo '<div class="form-group">';
-    			echo '<button type="submit" class="btn btn-default inicioSesion">Editar</button>';
+          echo '<a type="button" class="btn btn-primary inicioSesion btnVolver" onClick="history.go(-1);return true;">Volver</a>';
+    			echo '<button type="submit" class="btn btn-default inicioSesion btnVolver">Editar</button>';
           echo '<div class="form-group">';
     		  echo '</form>';
         }

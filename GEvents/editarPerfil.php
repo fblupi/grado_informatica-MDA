@@ -4,7 +4,7 @@ if(!isset($_SESSION['login'])){
 }
 ?>
 <body>
-  <section class="animated zoomIn">
+  <section>
       <h1>Editar perfil<hr></h1>
       <article>
        <?php
@@ -65,7 +65,8 @@ if(!isset($_SESSION['login'])){
 					echo '</div>';
 					echo '</div>';
 					echo '<div class="form-group">';
-					echo '<button type="submit" class="btn btn-default inicioSesion editarPerfil">Editar</button>';
+					echo '<a type="button" class="btn btn-primary inicioSesion btnVolver" onClick="history.go(-1);return true;">Volver</a>';
+					echo '<button type="submit" class="btn btn-default inicioSesion btnVolver editarPerfil">Editar</button>';
 					echo '</div>';
 					echo '</form>';
 					echo '</div>';

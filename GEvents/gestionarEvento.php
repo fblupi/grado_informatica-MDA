@@ -39,6 +39,7 @@ if(isset($_GET['i'])){
 					echo '<a href="consultarBalance.php" class="btn btn-default btnGestionEvento">';
 					echo 'Consultar balance';
 					echo '</a>';
+					echo '<a type="button" class="btn btn-primary btnGestionEvento" onClick="history.go(-1);return true;">Volver</a>';
 				}
 
 				?>
