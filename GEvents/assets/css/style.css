@@ -258,4 +258,8 @@ section{
 		min-width: 100px;
 		min-height: 100px;
 	}
+	
+	.navbar-nav .open .dropdown-menu{
+		text-align: right;
+	}
 }

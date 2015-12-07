@@ -5,7 +5,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section class="animated zoomIn">
-      <h1>Mi cuenta<hr></h1>
+      <h1>Editar perfil<hr></h1>
       <article>
        <?php
 				include 'libs/myLib.php';

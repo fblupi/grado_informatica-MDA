@@ -1,17 +1,17 @@
-<?php include 'header.php'; 
+<?php include 'header.php';
 if(!isset($_SESSION['login'])){
 	echo '<script>location.href="signin.php";</script>';
 }
 ?>
 <body>
   <section class="animated zoomIn">
-      <h1>Mi cuenta<hr></h1>
+      <h1>Mi perfil<hr></h1>
       <article class="miCuenta">
-       <?php 
+       <?php
 				include 'libs/myLib.php';
 				$conn = dbConnect();
 				$login = $_SESSION['login'];
-				
+
 				$sql = "SELECT * FROM Usuario WHERE usuario.login = '$login';";
 				$resultado = mysqli_query($conn, $sql);
 				while($usuario = mysqli_fetch_assoc($resultado)){
