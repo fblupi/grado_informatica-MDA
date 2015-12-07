@@ -132,6 +132,10 @@ section{
 	margin-bottom: 2%;
 }
 
+.gestionarEventos{
+	margin-left: 5%;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
@@ -261,5 +265,10 @@ section{
 	
 	.navbar-nav .open .dropdown-menu{
 		text-align: right;
+	}
+	
+	.gestionarEventos{
+		margin-top: 5%;
+		margin-left: -1%;
 	}
 }
