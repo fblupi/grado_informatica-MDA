@@ -159,6 +159,17 @@ textarea{
   margin-right: 2%;
 }
 
+fieldset{
+  height: 200px;
+  width: 100%;
+  padding: 1%;
+}
+
+.contenidoFieldset{
+  height:150px;
+  overflow:auto;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;

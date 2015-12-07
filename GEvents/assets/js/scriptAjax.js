@@ -14,6 +14,23 @@ function MostrarConsultaEventos() {
     });
 }
 
+function MostrarUsuarios(id) {
+		document.getElementById("ayuda").className = "ayudaMostrar";
+    var busqueda = $('#busqueda').val();
+    var parametros = {
+        search : busqueda,
+				i : id
+    };
+    $.ajax({
+            data:  parametros,
+            url:   'scripts/mostrarUsuarios.php',
+            type:  'GET',
+            success:  function (response) {
+                    $("#mostrarUsuarios").html(response);
+            }
+    });
+}
+
 $('#formularioInicioSesion').on('submit', function(e){
     e.preventDefault();
     $.ajax({
