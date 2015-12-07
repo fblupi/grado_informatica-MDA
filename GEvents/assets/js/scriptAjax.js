@@ -49,3 +49,15 @@ $('#formularioRecordarContraseña').on('submit', function(e){
 			}
 		});
 });
+
+$('#formularioEditarPerfil').on('submit', function(e){
+    e.preventDefault();
+    $.ajax({
+            data:  $("#formularioEditarPerfil").serialize(),
+            url:   'scripts/editarPerfil.php',
+            type:  'POST',
+            success:  function (response) {
+                    $("#resultado").html(response);
+            }
+    });
+});

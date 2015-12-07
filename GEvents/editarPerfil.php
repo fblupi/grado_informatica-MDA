@@ -1,4 +1,4 @@
-<?php include 'header.php'; 
+<?php include 'header.php';
 if(!isset($_SESSION['login'])){
 	echo '<script>location.href="signin.php";</script>';
 }
@@ -7,11 +7,11 @@ if(!isset($_SESSION['login'])){
   <section class="animated zoomIn">
       <h1>Mi cuenta<hr></h1>
       <article>
-       <?php 
+       <?php
 				include 'libs/myLib.php';
 				$conn = dbConnect();
 				$login = $_SESSION['login'];
-				
+
 				$sql = "SELECT * FROM Usuario WHERE usuario.login = '$login';";
 				$resultado = mysqli_query($conn, $sql);
 				while($usuario = mysqli_fetch_assoc($resultado)){
@@ -19,28 +19,25 @@ if(!isset($_SESSION['login'])){
 					echo '<h2>';
 					echo $usuario['login'];
 					echo '</h2>';
-					echo '<form class="formularioEditarPerfil" method="POST" action="scripts/editarPerfil.php" data-toggle="validator" role="form" enctype="multipart/form-data">';
+					echo '<form class="formularioEditarPerfil" id="formularioEditarPerfil" method="POST" action="" role="form" enctype="multipart/form-data">';
 					echo '<div class="col-lg-6 col-md-6">';
-					echo '<div class="form-group has-feedback">';
+					echo '<div class="form-group">';
 					echo '<label>Nombre: </label>';
 					echo '<input type="text" class="form-control" id="nombre" name="nombre" value="';
 					echo $usuario['nombre'];
 					echo '" maxlength="20" required>';
-					echo '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>';
 					echo '</div>';
-					echo '<div class="form-group has-feedback">';
+					echo '<div class="form-group">';
 					echo '<label>Apellidos: </label>';
 					echo '<input type="text" class="form-control" id="apellidos" name="apellidos" value="';
 					echo $usuario['apellidos'];
 					echo '" maxlength="45" required>';
-					echo '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>';
 					echo '</div>';
 					echo '<div class="form-group">';
 					echo '<label>Teléfono: </label>';
 					echo '<input type="tel" class="form-control" id="telefono" name="telefono" value="';
 					echo $usuario['telefono'];
 					echo '" maxlength="9">';
-					echo '<span class="glyphicon form-control-feedback" aria-hidden="true"></span>';
 					echo '</div>';
 					echo '</div>';
 					echo '<div class="col-lg-6 col-md-6">';
@@ -51,7 +48,7 @@ if(!isset($_SESSION['login'])){
 					echo '<div class="form-group">';
 					echo '<label>Fecha de nacimiento</label>';
 					echo '<input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" value="';
-					echo $usuario['fechaNacimiento'];
+					echo date('d-m-Y',strtotime($usuario['fechaNacimiento']));
 					echo '">';
 					echo '</div>';
 					echo '<div class="form-group">';
