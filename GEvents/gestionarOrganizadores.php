@@ -46,7 +46,7 @@ if(!isset($_SESSION['login'])){
 							$loginUsuario = mysqli_fetch_assoc($resultado4);
               $login = $loginUsuario['login'];
 
-              echo '<input type="checkbox" name="datos" id="datos" value="'.$idUsuario.'"/> '.$login.'</br>';
+              echo '<input type="checkbox" name="datos[]" id="datos" value="'.$idUsuario.'"/> '.$login.'</br>';
           }
           echo '</div>';
           echo '</fieldset>';
@@ -63,7 +63,7 @@ if(!isset($_SESSION['login'])){
           while($organizadores = mysqli_fetch_assoc($resultado3)){
             $idUsuario = $organizadores['id'];
             $loginUsuario = $organizadores['login'];
-            echo '<input type="checkbox" name="datos" id="datos" value="'.$idUsuario.'"/> '.$loginUsuario.'</br>';
+            echo '<input type="checkbox" name="datos[]" id="datos" value="'.$idUsuario.'"/> '.$loginUsuario.'</br>';
           }
           echo '</div>';
           echo '</fieldset>';
