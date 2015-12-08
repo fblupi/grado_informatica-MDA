@@ -170,6 +170,10 @@ fieldset{
   overflow:auto;
 }
 
+.idEvento{
+  display: none;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;

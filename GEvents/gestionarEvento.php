@@ -2,6 +2,10 @@
 if(isset($_GET['i'])){
 	$idEvento = $_GET['i'];
 }
+if(!isset($_SESSION['login'])){
+	echo '<script>location.href="signin.php";</script>';
+}
+
 ?>
 <body>
   <section>

@@ -98,7 +98,32 @@ $('#formularioEditarEvento').on('submit', function(e){
             url:   'scripts/editarEvento.php',
             type:  'POST',
             success:  function (response) {
-                    $("#resultado").html(response);
+                    	$("#resultado").html(response);
+            }
+    });
+});
+
+
+$('#formularioaddOrganizador').on('submit', function(e){
+    e.preventDefault();
+    $.ajax({
+            data:  $("#formularioaddOrganizador").serialize(),
+            url:   'scripts/gest_organizadorAdd.php',
+            type:  'POST',
+            success:  function (response) {
+            					$("#divGestionarOrganizadores").html(response);
+            }
+    });
+});
+
+$('#formularioEliminarOrganizador').on('submit', function(e){
+    e.preventDefault();
+    $.ajax({
+            data:  $("#formularioEliminarOrganizador").serialize(),
+            url:   'scripts/gest_organizadorEliminar.php',
+            type:  'POST',
+            success:  function (response) {
+            					$("#divGestionarOrganizadores").html(response);
             }
     });
 });
