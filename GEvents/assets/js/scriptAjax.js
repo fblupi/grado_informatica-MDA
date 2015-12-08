@@ -103,27 +103,55 @@ $('#formularioEditarEvento').on('submit', function(e){
     });
 });
 
-
-$('#formularioaddOrganizador').on('submit', function(e){
-    e.preventDefault();
+function addOrganizador(){
+	$.ajax({
+					data:  $("#formularioaddOrganizador").serialize(),
+					async: false,
+					url:   'scripts/gest_organizadorAdd.php',
+					type:  'POST',
+					success:  function (response) {
+										$("#divGestionarOrganizadores").html(response);
+										e.preventDefault();
+					}
+	});
+}
+/**$('.formularioaddOrganizador').on('submit', function(e){
+		e.preventDefault();
     $.ajax({
             data:  $("#formularioaddOrganizador").serialize(),
+						async: false,
             url:   'scripts/gest_organizadorAdd.php',
             type:  'POST',
             success:  function (response) {
             					$("#divGestionarOrganizadores").html(response);
+											e.preventDefault();
             }
     });
-});
+});*/
 
-$('#formularioEliminarOrganizador').on('submit', function(e){
+function deleteOrganizador(){
+	$.ajax({
+					data:  $("#formularioEliminarOrganizador").serialize(),
+					async: false,
+					url:   'scripts/gest_organizadorEliminar.php',
+					type:  'POST',
+					success:  function (response) {
+										$("#divGestionarOrganizadores").html(response);
+										e.preventDefault();
+					}
+	});
+}
+
+/*$('.formularioEliminarOrganizador').on('submit', function(e){
     e.preventDefault();
     $.ajax({
             data:  $("#formularioEliminarOrganizador").serialize(),
+						async: false,
             url:   'scripts/gest_organizadorEliminar.php',
             type:  'POST',
             success:  function (response) {
             					$("#divGestionarOrganizadores").html(response);
+											e.preventDefault();
             }
     });
-});
+});*/

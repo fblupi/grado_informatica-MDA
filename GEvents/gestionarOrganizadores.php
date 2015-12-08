@@ -34,7 +34,7 @@ if(!isset($_SESSION['login'])){
           echo '</form>';
 					echo '<div id="divGestionarOrganizadores">';
           echo '<div class="col-md-6 col-lg-6" id="mostrarUsuarios">';
-          echo '<form role="search" method="POST" action="" id="formularioaddOrganizador" name="formularioaddOrganizador">';
+          echo '<form role="search" method="POST" id="formularioaddOrganizador" class="formularioaddOrganizador" action="#" name="formularioaddOrganizador">';
           echo '<fieldset>';
           echo '<legend>Añadir organizadores</legend>';
           echo '<div class="contenidoFieldset">';
@@ -50,11 +50,11 @@ if(!isset($_SESSION['login'])){
           }
           echo '</div>';
           echo '</fieldset>';
-          echo '<input type="submit" name="add" class="btn btn-success" value="Añadir">';
+          echo '<button type="button" name="add" class="btn btn-success" onClick="addOrganizador();return false;">Añadir</button>';
           echo '</form>';
           echo '</div>';
           echo '<div class="col-md-6 col-lg-6" id="eliminarUsuarios">';
-          echo '<form role="search" method="POST" action="" id="formularioEliminarOrganizador" name="formularioEliminarOrganizador">';
+          echo '<form role="search" method="POST" id="formularioEliminarOrganizador" class="formularioEliminarOrganizador" action="#" name="formularioEliminarOrganizador">';
           echo '<fieldset>';
           echo '<legend>Eliminar organizadores</legend>';
           echo '<div class="contenidoFieldset">';
@@ -67,7 +67,7 @@ if(!isset($_SESSION['login'])){
           }
           echo '</div>';
           echo '</fieldset>';
-					echo '<input type="submit" name="borrar" class="btn btn-danger" value="Eliminar">';
+					echo '<button type="submit" name="borrar" class="btn btn-danger" onClick="deleteOrganizador();return false;">Eliminar</button>';
           echo '</form>';
           echo '</div>';
 					echo '</div>';
