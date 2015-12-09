@@ -13,10 +13,10 @@
        </div>
       <article>
       <div id="todosEventos">
-       <?php 
+       <?php
 				include 'libs/myLib.php';
 				$conn = dbConnect();
-				
+
 				$sql = "SELECT * FROM Evento ORDER BY fechaInicio;";
 				$resultado = mysqli_query($conn, $sql);
 				while($eventos = mysqli_fetch_assoc($resultado)){
@@ -40,16 +40,13 @@
 					echo date('j F, Y', $fechaInicio). ' - '.date('j F, Y', $fechaFin);
 					echo '</p>';
 					echo '<p>';
-					$descripcion = explode(".",$eventos['descripcion']);
-					echo $descripcion[0].'.';
-					echo $descripcion[1].'.';
-					echo $descripcion[2];
-					echo '...';
+					$descripcion = str_split($eventos['descripcion'], 50);
+          echo $descripcion[0].'...';
 					echo '</p>';
 					echo '</div>';
 					echo '</div>';
 				}
-				
+
 				?>
 				</div>
       </article>
