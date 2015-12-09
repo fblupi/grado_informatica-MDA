@@ -20,14 +20,11 @@ if (!isset($_SESSION['login'])) {//Si no se puede acceder a $_SESSION['login'] e
 	if(!empty($concepto) && !empty($descripcion) && !empty($evento) && !empty($cantidad) && !empty($importe)){
 		//Realizo la conexión si tenemos todos los datos necesarios
 		$conexion = dbConnect();
-		//Si es monetaria
-		if(strcmp($opcion,"Monetaria"==0){
+		if(strcmp($opcion,"Monetaria"==0){ //si es monetaria
 			$query="INSERT INTO cuenta(concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES " .
 			"('". $concepto . "','" . $importe . "','" . $descripcion . "'," . $cantidad . "," . $evento . ",'" . $tipo . "','" . $fecha . "');";
 			$resultado = mysqli_query($conexion, $sql);
-		}
-		//Si es producto
-		if(strcmp($opcion,"Producto")==0){
+		} else if(strcmp($opcion,"Producto")==0){ //si es producto
 			$query="INSERT INTO cuenta(concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES " .
 			"('". $concepto . "','" . $importe . "','" . $descripcion . "'," . $cantidad . "," . $evento . ",'" . $tipo . "','" . $fecha . "');";
 			$resultado = mysqli_query($conexion, $sql);
@@ -38,7 +35,12 @@ if (!isset($_SESSION['login'])) {//Si no se puede acceder a $_SESSION['login'] e
 		}
 
 		//Cierro conexión 
-		mysqli_close($conexion);		
+		mysqli_close($conexion);
+		if($resultado){
+			salir("Patrocinador introducido correctamente", 0);
+		}else{
+			salir("No se ha podido introducir al patrocinador", -1);
+		}
 	}// 
 	
 
