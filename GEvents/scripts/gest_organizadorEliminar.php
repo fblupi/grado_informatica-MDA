@@ -4,13 +4,15 @@ $id_evento=$_POST['idEvento'];
 //Realizo la conexión si tenemos todos los datos necesarios
 include '../libs/myLib.php';
 $conexion = dbConnect();
-
+if(!isset($_SESSION['login'])){
+  session_start();
+}
 if(!empty($datos) && !empty($id_evento) ){
 foreach ($datos as $idUsuario) {
   $query="DELETE FROM Organizador where usuario = '$idUsuario' AND evento = '$id_evento';";
 	mysqli_query($conexion, $query);
 }
-$sql2 = "SELECT DISTINCT Usuario.id FROM Usuario WHERE Usuario.id NOT IN (SELECT DISTINCT Usuario.id FROM Usuario, Organizador, Evento WHERE Usuario.id = Organizador.usuario AND Organizador.evento = Evento.id AND Evento.id = '$id_evento');";
+$sql2 = "SELECT DISTINCT Usuario.id FROM Usuario WHERE Usuario.id NOT IN (SELECT DISTINCT Organizador.usuario FROM Organizador WHERE Organizador.evento = '$id_evento');";
 $sql3 = "SELECT Usuario.login, Usuario.id FROM Usuario, Organizador, Evento WHERE Usuario.id = Organizador.usuario AND Organizador.evento = Evento.id AND Evento.id = '$id_evento';";
 $resultado2 = mysqli_query($conexion, $sql2);
 $resultado3 = mysqli_query($conexion, $sql3);
@@ -43,7 +45,11 @@ $resultado3 = mysqli_query($conexion, $sql3);
 while($organizadores = mysqli_fetch_assoc($resultado3)){
 	$idUsuario = $organizadores['id'];
 	$loginUsuario = $organizadores['login'];
-	echo '<input type="checkbox" name="datos[]" id="datos" value="'.$idUsuario.'"/> '.$loginUsuario.'</br>';
+  if($loginUsuario!=$_SESSION['login']){
+    echo '<input type="checkbox" name="datos[]" id="datos" value="'.$idUsuario.'"/> '.$loginUsuario.'</br>';
+  }else{
+    echo '<input type="checkbox" name="datos[]" id="datos" disabled value="'.$idUsuario.'"/> '.$loginUsuario.'</br>';
+  }
 }
 echo '</div>';
 echo '</fieldset>';

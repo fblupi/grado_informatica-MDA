@@ -15,7 +15,7 @@ if(!isset($_SESSION['login'])){
 				$conn = dbConnect();
 
 				$sql = "SELECT nombre FROM Evento WHERE id = '$idEvento';";
-        $sql2 = "SELECT DISTINCT Usuario.id FROM Usuario WHERE Usuario.id NOT IN (SELECT DISTINCT Usuario.id FROM Usuario, Organizador, Evento WHERE Usuario.id = Organizador.usuario AND Organizador.evento = Evento.id AND Evento.id = '$idEvento');";
+        $sql2 = "SELECT DISTINCT Usuario.id FROM Usuario WHERE Usuario.id NOT IN (SELECT DISTINCT Organizador.usuario FROM Organizador WHERE Organizador.evento = '$idEvento');";
         $sql3 = "SELECT Usuario.login, Usuario.id FROM Usuario, Organizador, Evento WHERE Usuario.id = Organizador.usuario AND Organizador.evento = Evento.id AND Evento.id = '$idEvento';";
 				$resultado = mysqli_query($conn, $sql);
         $resultado2 = mysqli_query($conn, $sql2);
@@ -63,8 +63,12 @@ if(!isset($_SESSION['login'])){
           while($organizadores = mysqli_fetch_assoc($resultado3)){
             $idUsuario = $organizadores['id'];
             $loginUsuario = $organizadores['login'];
-            echo '<input type="checkbox" name="datos[]" id="datos" value="'.$idUsuario.'"/> '.$loginUsuario.'</br>';
-          }
+						if($loginUsuario!=$_SESSION['login']){
+							echo '<input type="checkbox" name="datos[]" id="datos" value="'.$idUsuario.'"/> '.$loginUsuario.'</br>';
+						}else{
+							echo '<input type="checkbox" name="datos[]" id="datos" disabled value="'.$idUsuario.'"/> '.$loginUsuario.'</br>';
+						}
+					}
           echo '</div>';
           echo '</fieldset>';
 					echo '<button type="submit" name="borrar" class="btn btn-danger" onClick="deleteOrganizador();return false;">Eliminar</button>';
