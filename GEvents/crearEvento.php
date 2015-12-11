@@ -21,13 +21,22 @@ if(!isset($_SESSION['login'])){
 			</div>
 		<div class="form-group">
 				<label>Fecha de inicio</label>
-				<?php $fechaHoy = date('Y-m-d'); ?>
-					<input type="date" class="form-control" id="fechaInicio" min="<?php echo $fechaHoy; ?>" name="fechaInicio" placeholder="20-08-2016" required>
+				<div class="input-group date" data-provide="datepicker">
+			    <input type="text" class="form-control" id="fechaInicio" name="fechaInicio">
+			    <div class="input-group-addon">
+			        <span class="glyphicon glyphicon-th"></span>
+			    </div>
 			</div>
-		<div class="form-group">
-				<label>Fecha de fin</label>
-					<input type="date" class="form-control" id="fechaFin" min="<?php echo $fechaHoy; ?>" name="fechaFin" placeholder="28-08-2016" required>
 			</div>
+		<div class="form-group" id="sandbox-container">
+			<label>Fecha de fin</label>
+			<div class="input-group date" data-provide="datepicker" >
+			    <input type="text" class="form-control"  id="fechaFin" name="fechaFin">
+			    <div class="input-group-addon">
+			        <span class="glyphicon glyphicon-th"></span>
+			    </div>
+			</div>
+		</div>
 		<div class="form-group">
 				<label>Imagen del evento</label>
 					<input type="file" class="form-control" id="imagen" name="imagen">
@@ -39,6 +48,12 @@ if(!isset($_SESSION['login'])){
 		</form>
 </article>
 </section>
+<script type="text/javascript" >
+window.onload = function(){
+ $('#sandbox-container .input-group.date').datepicker({
+    language: "es"
+});
+}</script>
 </body>
 
 <?php include 'footer.php'; ?>

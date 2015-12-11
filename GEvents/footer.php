@@ -2,3 +2,4 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/validator.js"></script>
 <script src="assets/js/scriptAjax.js"></script>
+<script src="assets/js/bootstrap-datepicker.min.js"></script>

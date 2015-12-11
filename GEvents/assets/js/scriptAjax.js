@@ -1,3 +1,5 @@
+
+
 function MostrarConsultaEventos() {
 		document.getElementById("ayuda").className = "ayudaMostrar";
     var busqueda = $('#busqueda').val();
