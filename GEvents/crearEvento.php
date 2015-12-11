@@ -48,12 +48,6 @@ if(!isset($_SESSION['login'])){
 		</form>
 </article>
 </section>
-<script type="text/javascript" >
-window.onload = function(){
- $('#sandbox-container .input-group.date').datepicker({
-    language: "es"
-});
-}</script>
 </body>
 
 <?php include 'footer.php'; ?>
