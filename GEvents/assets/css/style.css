@@ -140,6 +140,7 @@ section{
 
 .btnGestionEvento{
 	display: block;
+  min-width: 230px;
 	width: 20%;
 	margin-bottom: 1%;
 	margin-top: 1%;
@@ -154,9 +155,11 @@ textarea{
 }
 
 .btnVolver{
-  margin-left: 2%;
-  margin-bottom: 2%;
-  margin-right: 2%;
+  float:left;
+}
+
+.btnCrear{
+  float: right;
 }
 
 fieldset{
@@ -314,7 +317,7 @@ fieldset{
 	.btnGestionEvento{
 		display: block;
 		width: 50%;
-		min-width: 200px;
+		min-width: 230px;
 		margin-bottom: 1%;
 		margin-top: 1%;
 	}

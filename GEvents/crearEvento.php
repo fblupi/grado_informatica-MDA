@@ -33,7 +33,7 @@ if(!isset($_SESSION['login'])){
 					<input type="file" class="form-control" id="imagen" name="imagen">
 		</div>
 			<div class="form-group">
-					<button type="submit" class="btn btn-default inicioSesion btnVolver">Crear</button>
+					<button type="submit" class="btn btn-success inicioSesion btnCrear">Crear</button>
 					<a type="button" class="btn btn-primary inicioSesion btnVolver" onClick="history.go(-1);return true;">Volver</a>
 			</div>
 		</form>
