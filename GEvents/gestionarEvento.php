@@ -1,9 +1,13 @@
 <?php include 'header.php';
 if(isset($_GET['i'])){
 	$idEvento = $_GET['i'];
+}else{
+	header('Location: eventosUsuario.php'); //no se pasa ningun evento por parametro
 }
 if(!isset($_SESSION['login'])){
 	echo '<script>location.href="signin.php";</script>';
+}else{
+	$idUsuario = $_SESSION['idUsuario'];
 }
 
 ?>
@@ -13,6 +17,13 @@ if(!isset($_SESSION['login'])){
        <?php
 				include 'libs/myLib.php';
 				$conn = dbConnect();
+
+				$sql = "SELECT * FROM organizador WHERE evento = '$idEvento' AND usuario = '$idUsuario';";
+				$resultado = mysqli_query($conn, $sql);
+
+				if(mysqli_num_rows($resultado) == 0){ //no es organizador
+					header('Location: eventosUsuario.php');
+				}
 
 				$sql = "SELECT nombre FROM Evento WHERE id = '$idEvento';";
 				$resultado = mysqli_query($conn, $sql);
