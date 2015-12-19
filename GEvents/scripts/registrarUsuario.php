@@ -78,7 +78,7 @@ if(!empty($login) && !empty($correo) && !empty($pass)){
 		salir2("El usuario ya existe", -1, 0);
 	}else{
 		$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.    	
-		$_SESSION['idUsuario'] = mysqli_insert_id();
+		$_SESSION['idUsuario'] = mysqli_insert_id($resultado);
 		mysqli_close($conexion);
 		//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.
 		salir2("Se ha registrado correctamente", 0, "index");
