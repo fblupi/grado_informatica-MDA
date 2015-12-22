@@ -115,19 +115,7 @@ function addOrganizador(){
 					}
 	});
 }
-/**$('.formularioaddOrganizador').on('submit', function(e){
-		e.preventDefault();
-    $.ajax({
-            data:  $("#formularioaddOrganizador").serialize(),
-						async: false,
-            url:   'scripts/gest_organizadorAdd.php',
-            type:  'POST',
-            success:  function (response) {
-            					$("#divGestionarOrganizadores").html(response);
-											e.preventDefault();
-            }
-    });
-});*/
+
 
 function deleteOrganizador(){
 	$.ajax({
@@ -141,17 +129,3 @@ function deleteOrganizador(){
 					}
 	});
 }
-
-/*$('.formularioEliminarOrganizador').on('submit', function(e){
-    e.preventDefault();
-    $.ajax({
-            data:  $("#formularioEliminarOrganizador").serialize(),
-						async: false,
-            url:   'scripts/gest_organizadorEliminar.php',
-            type:  'POST',
-            success:  function (response) {
-            					$("#divGestionarOrganizadores").html(response);
-											e.preventDefault();
-            }
-    });
-});*/
