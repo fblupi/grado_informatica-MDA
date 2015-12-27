@@ -6,12 +6,12 @@
 	if(!empty($id_evento)){
 		//Realizo la conexión si tenemos todos los datos necesarios
 		$conexion = dbConnect();
-		$gasto="SELECT SUM(importe) FROM cuenta WHERE tipo='gasto';";
-		$resultadogasto = mysqli_query($conexion, $sql);
-		$beneficio="SELECT SUM(importe) FROM cuenta WHERE tipo='beneficio';";
-		$resultadobenefi = mysqli_query($conexion, $sql);
-		$estimacion="SELECT precioVenta,cantidad FROM producto;";
-		$resultado = mysqli_query($conexion, $sql);
+		$gasto="SELECT SUM(importe) FROM cuenta WHERE tipo='gasto' AND evento='$id_evento';";
+		$resultadogasto = mysqli_query($conexion, $gasto);
+		$beneficio="SELECT SUM(importe) FROM cuenta WHERE tipo='beneficio' and evento='$id_evento';";
+		$resultadobenefi = mysqli_query($conexion, $beneficio);
+		$estimacion="SELECT precioVenta,cantidad FROM producto WHERE evento='$id_evento';";
+		$resultado = mysqli_query($conexion, $estimacion);
 		$estimado=0;
 		//Voy acumulando todo los beneficios estimados de cada articulo.
 		while ($row = mysql_fetch_array($resultado)) {
