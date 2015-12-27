@@ -10,16 +10,26 @@
 		$resultadogasto = mysqli_query($conexion, $sql);
 		$beneficio="SELECT SUM(importe) FROM cuenta WHERE tipo='beneficio';";
 		$resultadobenefi = mysqli_query($conexion, $sql);
+		$estimacion="SELECT precioVenta,cantidad FROM producto;";
+		$resultado = mysqli_query($conexion, $sql);
+		$estimado=0;
+		//Voy acumulando todo los beneficios estimados de cada articulo.
+		while ($row = mysql_fetch_array($resultado)) {
+		 	$estimado=$estimado+($row['precioVenta']*$row['cantidad']);
+		}
+		//Le añado el beneficio actual que tenemos en el evento.
+		$estimado=$resultadobenefi+$estimado;
 		?>
+
 		<table>
 		<tr>
 		<td>Gastos</td><td><?php echo $resultadogasto ?></td>
 		</tr>	
 		<tr>
-		<td>Ingresos</td><td><?php echo $resultadobenefi ?></td>
+		<td>Ingresos</td><td><?php echo $estimado ?></td>
 		</tr>
 		<tr>
-		<td>Balance</td><td><?php echo $resultadobenefi-$resultadogasto ?></td>
+		<td>Balance</td><td><?php echo $estimado-$resultadogasto ?></td>
 		</tr>
 		</table>
 
