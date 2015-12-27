@@ -5,6 +5,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
 <section id="divInicioSesion" class="divInicioSesion">
+  <h1>Introducir inversión<hr></h1>
 <article>
 	<form class="form-signin" method="POST" id="formularioIntroducirInversion" name="formularioIntroducirInversion" action="" data-toggle="validator" enctype="multipart/form-data">
 			<div class="form-group has-feedback">
