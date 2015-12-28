@@ -5,7 +5,7 @@
 ?>
 <body>
 <section id="divInicioSesion" class="divInicioSesion">
-	<article class="animated rollIn">
+	<article>
 		<form class="form-horizontal" method="POST" action="" id="formularioInicioSesion" name="formularioInicioSesion" data-toggle="validator">
 			<div class="form-group has-feedback">
 				<label>Nombre de usuario</label>

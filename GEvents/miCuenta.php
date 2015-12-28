@@ -4,7 +4,7 @@ if(!isset($_SESSION['login'])){
 }
 ?>
 <body>
-  <section class="animated zoomIn">
+  <section>
       <h1>Mi perfil<hr></h1>
       <article class="miCuenta">
        <?php

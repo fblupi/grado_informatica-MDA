@@ -5,7 +5,7 @@ if(isset($_SESSION['login'])){
 ?>
 <body>
 <section id="divInicioSesion" class="divInicioSesion">
-<article class="animated flipInY">
+<article>
 	<form class="form-horizontal" id="formularioRecordarContraseña" name="formularioRecordarContraseña" method="POST" action="" data-toggle="validator" role="form">
 			<div class="form-group">
 				<label>Nombre de usuario</label>

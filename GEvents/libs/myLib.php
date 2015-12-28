@@ -32,8 +32,7 @@ function salir2($str, $code, $url) {
       echo '</div>';
       echo '<script>
       setTimeout(function () {
-         document.getElementById("divInicioSesion").className = "divInicioSesion animated rollOut";
-         document.getElementById("resultado").className = "alertas animated zoomOut";}, 2000);
+         document.getElementById("resultado").className = "alertas animated zoomOut";}, 3000);
       setTimeout(function () {
          window.location.href = "'.$url.'.php";}, 3000);</script>';
       break;
