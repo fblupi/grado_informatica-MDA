@@ -1,0 +1,49 @@
+<?php include 'header.php';
+if(!isset($_SESSION['login'])){
+	echo '<script>location.href="signin.php";</script>';
+}
+?>
+<body>
+<section>
+  <h1>Crear actividad<hr></h1>
+<article>
+	<form class="form-signin" method="POST" id="formularioCrearActividad" name="formularioCrearActividad" action="scripts/crearActividad.php" data-toggle="validator" enctype="multipart/form-data">
+			<div class="form-group has-feedback">
+				<label>Nombre</label>
+				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Concierto" maxlength="45" required>
+			</div>
+		<div class="form-group">
+				<label>Descripción</label>
+				<textarea class="form-control" id="descripcion" name="descripcion" rows="5" placeholder="Breve descripción de la actividad" required></textarea>
+			</div>
+			<div class="form-group">
+				<label>Lugar</label>
+				<input type="text" class="form-control" id="lugar" name="lugar" placeholder="Plaza del pueblo" required>
+			</div>
+      <div class="form-group">
+  				<label>Fecha</label>
+  				<div class="input-group date" data-provide="datepicker">
+  			    <input type="text" class="form-control" id="fecha" name="fecha">
+  			    <div class="input-group-addon">
+  			        <span class="glyphicon glyphicon-th"></span>
+  			    </div>
+  			</div>
+  			</div>
+      <div class="form-group">
+        <label>Precio (€)</label>
+        <input type="text" class="form-control" id="precio" name="precio" placeholder="0" required>
+      </div>
+      <div class="form-group">
+  				<label>Imagen</label>
+  					<input type="file" class="form-control" id="imagen" name="imagen">
+  		</div>
+			<div class="form-group">
+					<button type="submit" class="btn btn-success inicioSesion btnCrear">Crear</button>
+					<a type="button" class="btn btn-primary inicioSesion btnVolver" onClick="history.go(-1);return true;">Volver</a>
+			</div>
+		</form>
+</article>
+</section>
+</body>
+
+<?php include 'footer.php'; ?>
