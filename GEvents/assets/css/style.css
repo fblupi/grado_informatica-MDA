@@ -181,6 +181,21 @@ fieldset{
   font-weight: bold;
 }
 
+.infoBalance{
+  display: none;
+}
+
+.infoBalancei:hover + .infoBalance{
+  display: inline;
+  position: fixed;
+  background-color: #FAFAFA;
+  border-radius: 15px;
+  font-size: 13px;
+  width: 150px;
+  padding: 10px;
+
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;

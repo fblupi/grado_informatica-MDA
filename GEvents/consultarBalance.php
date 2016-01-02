@@ -66,7 +66,7 @@ if(!isset($_SESSION['login'])){
             ?> €</td>
             </tr>
         		<tr>
-            <td>Ingresos</td><td><?php
+            <td>Ingresos estimados <i class="fa fa-info-circle infoBalancei"></i><div class="infoBalance"><span>Ingresos estimados si se venden todos los productos</span></div></td><td><?php
             if($beneficio['beneficio']==NULL){
               echo '0';
             }else{
