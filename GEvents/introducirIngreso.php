@@ -18,7 +18,7 @@ if(!isset($_SESSION['login'])){
 			</div>
 			<div class="form-group">
 				<label>Importe (€)</label>
-				<input type="text" class="form-control" id="precioCompra" name="precioCompra" required>
+				<input type="text" class="form-control" id="importe" name="importe" required>
 			</div>
       <div class="form-group">
         <label>Cantidad</label>
