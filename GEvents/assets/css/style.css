@@ -203,6 +203,15 @@ fieldset{
   font-weight: bold;
 }
 
+.consultarBeneficiosInfo{
+  font-style: italic;
+  font-size: 14px;
+}
+
+.consultarBeneficios{
+  margin-top: 5%;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
