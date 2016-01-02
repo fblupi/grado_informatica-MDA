@@ -315,8 +315,7 @@ fieldset{
 	}
 
 	.btnGestionEvento{
-		display: block;
-		width: 50%;
+		width: 100%;
 		min-width: 250px;
 		margin-bottom: 1%;
 		margin-top: 1%;
