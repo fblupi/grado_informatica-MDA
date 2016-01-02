@@ -15,7 +15,7 @@ if ($row = mysqli_fetch_array($resultado)) {
     $_SESSION['login'] = $login;
     $_SESSION['idUsuario'] = $row['id'];
     mysqli_close($conexion);
-    salir2("Se ha iniciado sesión correctamente", 0, "index");
+    salir2("Se ha iniciado sesión correctamente", 0, "eventosUsuario");
   } else {
     mysqli_close($conexion);
     salir2("El nombre de usuario o la contraseña no son correctos", -1, 0);

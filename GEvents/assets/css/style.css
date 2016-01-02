@@ -140,8 +140,8 @@ section{
 
 .btnGestionEvento{
 	display: block;
-  min-width: 230px;
-	width: 20%;
+  min-width: 250px;
+	width: 40%;
 	margin-bottom: 1%;
 	margin-top: 1%;
 }
@@ -317,7 +317,7 @@ fieldset{
 	.btnGestionEvento{
 		display: block;
 		width: 50%;
-		min-width: 230px;
+		min-width: 250px;
 		margin-bottom: 1%;
 		margin-top: 1%;
 	}
