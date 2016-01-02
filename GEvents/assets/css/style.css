@@ -193,7 +193,14 @@ fieldset{
   font-size: 13px;
   width: 150px;
   padding: 10px;
+}
 
+.verBalanceDetallado{
+  float: right;
+}
+
+.totalBalanceDetallado{
+  font-weight: bold;
 }
 
 @media (max-width: 768px){
