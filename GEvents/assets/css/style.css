@@ -177,6 +177,10 @@ fieldset{
   display: none;
 }
 
+.balance{
+  font-weight: bold;
+}
+
 @media (max-width: 768px){
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;

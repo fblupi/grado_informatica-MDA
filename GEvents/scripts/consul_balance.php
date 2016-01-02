@@ -1,7 +1,7 @@
 <?php
 	$id_evento=$_POST['id_evento'];
 
-	
+
 
 	if(!empty($id_evento)){
 		//Realizo la conexión si tenemos todos los datos necesarios
@@ -14,7 +14,7 @@
 		<table>
 		<tr>
 		<td>Gastos</td><td><?php echo $resultadogasto ?></td>
-		</tr>	
+		</tr>
 		<tr>
 		<td>Ingresos</td><td><?php echo $resultadobenefi ?></td>
 		</tr>
@@ -25,9 +25,9 @@
 
 
 		<?php
-		//Cierro conexión 
-		mysqli_close($conexion);		
-	}// 
-	
+		//Cierro conexión
+		mysqli_close($conexion);
+	}//
+
 
 ?>
