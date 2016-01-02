@@ -55,8 +55,8 @@ if(!isset($_SESSION['login'])){
             echo date('j F, Y', strtotime($actividades['fecha']));
             echo '</td>';
             echo '<td>';
-            echo '<a class="btn btn-warning" href="modificarActividad.php?idEvento='.$idEvento.'&idActividad='.$idActividad.'">Modificar</a>';
-            echo '<a class="btn btn-danger" href="cancelarActividad.php?idEvento='.$idEvento.'&idActividad='.$idActividad.'">Cancelar</a>';
+            echo '<a class="btn btn-warning btnGestionarActividades" href="modificarActividad.php?idEvento='.$idEvento.'&idActividad='.$idActividad.'">Modificar</a>';
+            echo '<a class="btn btn-danger btnGestionarActividades" href="cancelarActividad.php?idEvento='.$idEvento.'&idActividad='.$idActividad.'">Cancelar</a>';
             echo '</td>';
             echo '</tr>';
 

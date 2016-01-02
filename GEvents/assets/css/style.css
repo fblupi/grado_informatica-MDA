@@ -216,7 +216,18 @@ fieldset{
   float: right;
 }
 
+.btnGestionarActividades{
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+
 @media (max-width: 768px){
+  .btnGestionarActividades{
+    margin-right: 3%;
+    margin-bottom: 3%;
+    display: block;
+  }
+
 	.navbar-default .navbar-nav > li > a {
 		text-align: right;
 	}

@@ -2,12 +2,18 @@
 if(!isset($_SESSION['login'])){
 	echo '<script>location.href="signin.php";</script>';
 }
+if(isset($_GET['idEvento'])){
+	$idEvento = $_GET['idEvento'];
+}else{
+	header('Location: eventosUsuario.php'); //no se pasa ningun evento por parametro
+}
 ?>
 <body>
 <section>
   <h1>Crear actividad<hr></h1>
 <article>
 	<form class="form-signin" method="POST" id="formularioCrearActividad" name="formularioCrearActividad" action="scripts/crearActividad.php" data-toggle="validator" enctype="multipart/form-data">
+			<input type="hidden" id="idEvento" name="idEvento" value="<?php echo $idEvento;?>">
 			<div class="form-group has-feedback">
 				<label>Nombre</label>
 				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Concierto" maxlength="45" required>
