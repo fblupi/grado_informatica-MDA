@@ -89,6 +89,7 @@ if(!isset($_SESSION['login'])){
         		mysqli_close($conexion);
         	}//
         ?>
+			<a type="button" class="btn btn-primary" onClick="history.go(-1);return true;">Volver</a>
       </article>
   </section>
 </body>
