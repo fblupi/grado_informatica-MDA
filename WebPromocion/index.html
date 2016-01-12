@@ -3,13 +3,35 @@
 <meta charset="utf-8">
 <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<!-- css -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="assets/css/animate.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" type="text/css">
 </head>
 <body>
+<nav>
+<ul>
+  <a href="#introduccion"><li>Home</li></a>
+  <a href="#producto"><li>Producto</li></a>
+  <a href="#equipo"><li>Equipo</li></a>
+  <a href="#proceso"><li>Desarrollo</li></a>
+</ul>
+</nav>
+<div class="introduccion" id="introduccion"></div>
+<div class="producto" id="producto"></div>
+<div class="equipo" id="equipo"></div>
+<div class="proceso" id="proceso"></div>
 </body>
+<footer>
+<script>
+function cambiarTransicion(id){
+  document.getElementById(id).className += ' animated bounceIn';
+  window.location.href = '#'+id;
+}
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+</footer>
 </html>
