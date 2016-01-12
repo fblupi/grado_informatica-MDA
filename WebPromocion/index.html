@@ -13,25 +13,118 @@
 <body>
 <nav>
 <ul>
-  <a href="#introduccion"><li>Home</li></a>
-  <a href="#producto"><li>Producto</li></a>
-  <a href="#equipo"><li>Equipo</li></a>
-  <a href="#proceso"><li>Desarrollo</li></a>
+  <a href="#introduccion" onclick="cambiarTransicionIntroduccion();"><li id="introduccionMenu" class="active">Inicio</li></a>
+  <a href="#producto" onclick="cambiarTransicionProducto();"><li id="productoMenu">G-Events</li></a>
+  <a href="#equipo" onclick="cambiarTransicionEquipo();"><li id="equipoMenu">Equipo</li></a>
+  <a href="#desarrollo" onclick="cambiarTransicionProceso();"><li id="desarrolloMenu">Desarrollo</li></a>
 </ul>
 </nav>
-<div class="introduccion" id="introduccion"></div>
-<div class="producto" id="producto"></div>
-<div class="equipo" id="equipo"></div>
-<div class="proceso" id="proceso"></div>
+<div class="introduccion" id="introduccion">
+<section id="introduccionContenido" class="show">
+  <div class="row">
+    <div class="col-md-4 col-lg-4 panel1 animated fadeInLeft"></div>
+    <div class="col-md-4 col-lg-4 panel2 animated fadeInDown"></div>
+    <div class="col-md-4 col-lg-4 panel3 animated fadeInRight"></div>
+  </div>
+</section>
+</div>
+<div class="producto" id="producto">
+  <section id="productoContenido" class="hide">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 panel1 animated fadeInLeft"></div>
+      <div class="col-md-4 col-lg-4 panel2 animated fadeInDown"></div>
+      <div class="col-md-4 col-lg-4 panel3 animated fadeInRight"></div>
+    </div>
+  </section>
+</div>
+<div class="equipo" id="equipo">
+  <section id="equipoContenido" class="hide">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 panel1 animated fadeInLeft"></div>
+      <div class="col-md-4 col-lg-4 panel2 animated fadeInDown"></div>
+      <div class="col-md-4 col-lg-4 panel3 animated fadeInRight"></div>
+    </div>
+  </section>
+</div>
+<div class="proceso" id="desarrollo">
+  <section id="desarrolloContenido" class="hide">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 panel1 animated fadeInLeft"></div>
+      <div class="col-md-4 col-lg-4 panel2 animated fadeInDown"></div>
+      <div class="col-md-4 col-lg-4 panel3 animated fadeInRight"></div>
+    </div>
+  </section>
+</div>
+
+
 </body>
 <footer>
-<script>
-function cambiarTransicion(id){
-  document.getElementById(id).className += ' animated bounceIn';
-  window.location.href = '#'+id;
-}
-</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script>
+window.onload = function() {
+  document.getElementById('introduccionContenido').className = 'show';
+}
+
+$(window).scroll(function() {
+  if ($(this).scrollTop()<200){
+    $('#introduccionContenido').removeClass("hide").addClass("show");
+    $('#introduccionMenu').addClass("active");
+    $('#productoMenu').removeClass("active");
+    $('#equipoMenu').removeClass("active");
+    $('#desarrolloMenu').removeClass("active");
+  }
+  if ($(this).scrollTop()>400){
+    $('.producto').fadeIn();
+    $('#productoContenido').removeClass("hide").addClass("show");
+    $('#introduccionMenu').removeClass("active");
+    $('#productoMenu').addClass("active");
+    $('#equipoMenu').removeClass("active");
+    $('#desarrolloMenu').removeClass("active");
+  }
+  if ($(this).scrollTop()>1100){
+    $('.equipo').fadeIn();
+    $('#equipoContenido').removeClass("hide").addClass("show");
+    $('#introduccionMenu').removeClass("active");
+    $('#productoMenu').removeClass("active");
+    $('#equipoMenu').addClass("active");
+    $('#desarrolloMenu').removeClass("active");
+  }
+  if ($(this).scrollTop()>1700){
+    $('.proceso').fadeIn();
+    $('#desarrolloContenido').removeClass("hide").addClass("show");
+    $('#introduccionMenu').removeClass("active");
+    $('#productoMenu').removeClass("active");
+    $('#equipoMenu').removeClass("active");
+    $('#desarrolloMenu').addClass("active");
+  }
+ });
+
+function cambiarTransicionIntroduccion(){
+  document.getElementById('introduccionMenu').className = 'active';
+  document.getElementById('productoMenu').className = '';
+  document.getElementById('equipoMenu').className = '';
+  document.getElementById('desarrolloMenu').className = '';
+}
+function cambiarTransicionProducto(){
+  document.getElementById('introduccionMenu').className = '';
+  document.getElementById('productoMenu').className = 'active';
+  document.getElementById('equipoMenu').className = '';
+  document.getElementById('desarrolloMenu').className = '';
+}
+function cambiarTransicionEquipo(){
+  document.getElementById('introduccionMenu').className = '';
+  document.getElementById('productoMenu').className = '';
+  document.getElementById('equipoMenu').className = 'active';
+  document.getElementById('desarrolloMenu').className = '';
+}
+function cambiarTransicionProceso(){
+  document.getElementById('introduccionMenu').className = '';
+  document.getElementById('productoMenu').className = '';
+  document.getElementById('equipoMenu').className = '';
+  document.getElementById('desarrolloMenu').className = 'active';
+}
+</script>
+
 </footer>
 </html>

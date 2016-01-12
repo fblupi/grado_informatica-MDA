@@ -1,41 +1,64 @@
+#introduccion, #producto, #equipo, #proceso{
+  overflow: scroll;
+}
 .introduccion {
   width: 100%;
+  padding-top: 10%;
   height: 100%;
   background: url(../img/bg2.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  animation-duration: 2s !important;
+  -webkit-animation-duration: 2s !important;
+  -moz-animation-duration: 2s !important;
+  -o-animation-duration: 2s !important;
 }
 
 .producto{
   width: 100%;
+  padding-top: 10%;
   height: 100%;
   background: url(../img/bg3.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  animation-duration: 2s !important;
+  -webkit-animation-duration: 2s !important;
+  -moz-animation-duration: 2s !important;
+  -o-animation-duration: 2s !important;
 }
 
 .equipo{
   width: 100%;
+  padding-top: 10%;
   height: 100%;
   background: url(../img/bg4.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  animation-duration: 2s !important;
+  -webkit-animation-duration: 2s !important;
+  -moz-animation-duration: 2s !important;
+  -o-animation-duration: 2s !important;
 }
 
 .proceso{
   width: 100%;
+  padding-top: 10%;
   height: 100%;
   background: url(../img/bg1.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  animation-duration: 2s !important;
+  -webkit-animation-duration: 2s !important;
+  -moz-animation-duration: 2s !important;
+  -o-animation-duration: 2s !important;
 }
 body, html, head{
   background-color: transparent !important;
@@ -50,8 +73,9 @@ nav{
   background-origin: padding-box;
   background-size: auto auto;
   background-color: transparent !important;
-  position: fixed;
+  position: fixed !important;
   width: 100%;
+  z-index: 99;
 }
 
 nav ul{
@@ -69,6 +93,25 @@ nav ul li {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
+  position: relative;
+  font-size: 25px;
+  margin-top: 0;
+  font-family: 'Myriad Pro', 'Myriad', helvetica, arial, sans-serif;
+  text-shadow: 2px 3px 3px #292929;
+  letter-spacing: 0;
+  -webkit-text-stroke: 0px white;
+}
+nav ul a{
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: 0 1px 0 #e9e9e9;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+nav ul a li.active{
+  color: #A74141;
 }
 
 nav ul a li{
@@ -81,9 +124,83 @@ nav ul a:hover{
 }
 
 nav ul li:hover{
-  color: #d6d6d6;
+  color: #A74141;
 }
 
 nav ul li:active{
   border: 0 !important;
+}
+
+.hide {
+    overflow: hidden;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.show {
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -moz-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    max-height: 1000px;
+    overflow: hidden;
+}
+
+#introduccionContenido, #productoContenido, #equipoContenido, #desarrolloContenido{
+  position: relative;
+  width: 100%;
+  padding-left: 2%;
+}
+
+.panel1, .panel2, .panel3{
+  width: 30% !important;
+  background-color: rgba(255,255,255,0.7);
+  min-height: 450px;
+  display: block;
+  margin: 0 auto;
+  margin-left: 2%;
+  border-radius: 2%;
+}
+
+.panel1{
+  animation-duration: 0.7s !important;
+  -webkit-animation-duration: 0.7s !important;
+  -moz-animation-duration: 0.7s !important;
+  -o-animation-duration: 0.7s !important;
+}
+
+.panel2{
+  animation-duration: 0.7s !important;
+  -webkit-animation-duration: 0.7s !important;
+  -moz-animation-duration: 0.7s !important;
+  -o-animation-duration: 0.7s !important;
+  animation-delay: 0.7s !important;
+  -webkit-animation-delay: 0.7s !important;
+  -moz-animation-delay: 0.7s !important;
+  -o-animation-delay: 0.7s !important;
+}
+
+.panel3{
+  animation-duration: 0.7s !important;
+  -webkit-animation-duration: 0.7s !important;
+  -moz-animation-duration: 0.7s !important;
+  -o-animation-duration: 0.7s !important;
+  animation-delay: 1.4s !important;
+  -webkit-animation-delay: 1.4s !important;
+  -moz-animation-delay: 1.4s !important;
+  -o-animation-delay: 1.4s !important;
 }
