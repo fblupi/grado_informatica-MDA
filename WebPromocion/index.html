@@ -13,10 +13,10 @@
 <body>
 <nav>
 <ul>
-  <a href="#introduccion" onclick="cambiarTransicionIntroduccion();"><li id="introduccionMenu" class="active">Inicio</li></a>
-  <a href="#producto" onclick="cambiarTransicionProducto();"><li id="productoMenu">G-Events</li></a>
-  <a href="#equipo" onclick="cambiarTransicionEquipo();"><li id="equipoMenu">Equipo</li></a>
-  <a href="#desarrollo" onclick="cambiarTransicionProceso();"><li id="desarrolloMenu">Desarrollo</li></a>
+  <a href="#introduccion" class="ancla" onclick="cambiarTransicionIntroduccion();"><li id="introduccionMenu" class="active">Inicio</li></a>
+  <a href="#producto" class="ancla" onclick="cambiarTransicionProducto();"><li id="productoMenu">G-Events</li></a>
+  <a href="#equipo" class="ancla" onclick="cambiarTransicionEquipo();"><li id="equipoMenu">Equipo</li></a>
+  <a href="#desarrollo" class="ancla" onclick="cambiarTransicionProceso();"><li id="desarrolloMenu">Desarrollo</li></a>
 </ul>
 </nav>
 <div class="introduccion" id="introduccion">
@@ -64,6 +64,13 @@
 <script>
 window.onload = function() {
   document.getElementById('introduccionContenido').className = 'show';
+  $('a.ancla').click(function(e){
+	e.preventDefault();
+    enlace  = $(this).attr('href');
+    $('html, body').animate({
+        scrollTop: $(enlace).offset().top
+    }, 1000);
+	});
 }
 
 $(window).scroll(function() {
