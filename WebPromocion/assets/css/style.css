@@ -178,6 +178,7 @@ nav ul li:active{
   border-radius: 10px;
   text-align: center;
 }
+
 .panel4, .panel5, .panel6, .panel7, .panel8{
   width: 31.5%;
   background-color: rgba(255,255,255,0.7);
@@ -187,7 +188,7 @@ nav ul li:active{
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
-  text-align: center;
+  text-align: left;
 }
 
 .panel7, .panel8{
@@ -196,6 +197,26 @@ nav ul li:active{
 
 .panel7{
   margin-left: 15%;
+}
+
+.panel9{
+  width: 96%;
+  min-height: 400px;
+  background-color: rgba(255,255,255,0.7);
+  display: block;
+  margin: 0 auto;
+  margin-left: 1%;
+  padding: 2%;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  text-align: center;
+}
+.nombreEquipo{
+  font-size: 20px;
+  color: #a00932;
+  text-align: center;
+  text-shadow: 1px 1px 1px #292929;
 }
 
 .panel1, .panel4{
@@ -209,7 +230,7 @@ nav ul li:active{
    background-color: rgba(255,255,255,0.8);
 }
 
-.panel4:hover, .panel5:hover, .panel6:hover, .panel7:hover, .panel8:hover{
+.panel7:hover, .panel8:hover{
   width: 33%;
   -moz-transition-duration: 0.3s;
   -webkit-transition-duration: 0.3s;
