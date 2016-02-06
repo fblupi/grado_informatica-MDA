@@ -5,7 +5,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section>
-      <h1>Balance<hr></h1>
+      <h1>Balance</h1>
       <article>
         <?php
         	$id_evento=$_GET['i'];

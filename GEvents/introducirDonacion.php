@@ -5,12 +5,12 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
 <section>
-  <h1>Introducir donación<hr></h1>
+  <h1>Introducir donación</h1>
 <article>
   <div class="row">
     <div class="col-md-6 col-lg-6">
       <h2>Monetaria</h2>
-	<form class="form-signin" method="POST" id="formularioIntroducirInversion" name="formularioIntroducirInversion" action="scripts/introd_donacion.php" data-toggle="validator" enctype="multipart/form-data">
+	<form class="form-signin form-horizontal" method="POST" id="formularioIntroducirInversion" name="formularioIntroducirInversion" action="scripts/introd_donacion.php" data-toggle="validator" enctype="multipart/form-data">
 			<div class="form-group has-feedback">
 				<label>Concepto</label>
 				<input type="text" class="form-control" id="concepto" name="concepto" maxlength="45" required>

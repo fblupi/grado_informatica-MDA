@@ -18,9 +18,9 @@ $resultado2 = mysqli_query($conn, $sql2);
 ?>
 <body>
 <section>
-  <h1>Distribuir recurso<hr></h1>
+  <h1>Distribuir recurso</h1>
 <article>
-	<form class="form-signin" method="POST" id="formularioDistribuirRecurso" name="formularioDistribuirRecurso" action="scripts/distribuirRecurso.php" data-toggle="validator" enctype="multipart/form-data">
+	<form class="form-signin form-horizontal" method="POST" id="formularioDistribuirRecurso" name="formularioDistribuirRecurso" action="scripts/distribuirRecurso.php" data-toggle="validator" enctype="multipart/form-data">
 			<input type="hidden" id="idEvento" name="idEvento" value="<?php echo $idEvento;?>">
       <div class="form-group has-feedback">
 				<label>Producto</label>

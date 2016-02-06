@@ -8,7 +8,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section>
-      <article>
+
        <?php
 				include 'libs/myLib.php';
 				$conn = dbConnect();
@@ -18,7 +18,8 @@ if(!isset($_SESSION['login'])){
 				while($eventos = mysqli_fetch_assoc($resultado)){
 					echo '<h1>';
 					echo 'Editar evento <small class="tituloGestionEvento">('.$eventos['nombre'].')</small>';
-					echo '<hr></h1>';
+					echo '</h1>';
+					echo '<article>';
           echo '<form class="formularioEditarEvento" id="formularioEditarEvento" method="POST" action="" role="form" enctype="multipart/form-data">';
           echo '<div class="form-group">';
 					echo '<label>Nombre del evento</label>';

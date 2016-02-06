@@ -5,7 +5,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section>
-      <h1>Balance detallado<hr></h1>
+      <h1>Balance detallado</h1>
       <article>
       <div class="row">
         <table class="table table-hover">

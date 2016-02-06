@@ -5,7 +5,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section>
-      <h1>Estimar beneficio<hr></h1>
+      <h1>Estimar beneficio</h1>
       <article>
       <div class="row">
 			<div class="col-md-4 col-lg-4">

@@ -21,9 +21,9 @@ $datosActividad = mysqli_fetch_assoc($resultado);
 ?>
 <body>
 <section>
-  <h1>Modificar actividad<hr></h1>
+  <h1>Modificar actividad</h1>
 <article>
-	<form class="form-signin" method="POST" id="formularioModificarActividad" name="formularioModificarActividad" action="scripts/modificarActividad.php" data-toggle="validator" enctype="multipart/form-data">
+	<form class="form-signin form-horizontal" method="POST" id="formularioModificarActividad" name="formularioModificarActividad" action="scripts/modificarActividad.php" data-toggle="validator" enctype="multipart/form-data">
 		<input type="hidden" id="idEvento" name="idEvento" value="<?php echo $idEvento;?>">
 		<input type="hidden" id="idActividad" name="idActividad" value="<?php echo $idActividad;?>">
 			<div class="form-group has-feedback">

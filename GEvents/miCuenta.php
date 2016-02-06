@@ -5,7 +5,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section>
-      <h1>Mi perfil<hr></h1>
+      <h1>Mi perfil</h1>
       <article class="miCuenta">
        <?php
 				include 'libs/myLib.php';

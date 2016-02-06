@@ -9,7 +9,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section>
-      <article>
+
        <?php
 				include 'libs/myLib.php';
 				$conn = dbConnect();
@@ -24,8 +24,9 @@ if(!isset($_SESSION['login'])){
 				while($eventos = mysqli_fetch_assoc($resultado)){
 					echo '<h1>';
 					echo 'Gestionar organizadores <small class="tituloGestionEvento">('.$eventos['nombre'].')</small>';
-					echo '<hr></h1>';
-          echo '<form role="search">';
+					echo '</h1>';
+					echo '<article style="height: 550px;">';
+          echo '<form role="search" class="form-horizontal">';
           echo '<div class="input-group">';
           echo '<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>';
           echo '<input type="text" id="busqueda" name="busqueda" onkeyup="MostrarUsuarios('.$idEvento.');" class="form-control" placeholder="Buscar...">';

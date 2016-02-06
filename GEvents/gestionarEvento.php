@@ -13,7 +13,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section>
-      <article>
+
        <?php
 				include 'libs/myLib.php';
 				$conn = dbConnect();
@@ -30,7 +30,8 @@ if(!isset($_SESSION['login'])){
 				while($eventos = mysqli_fetch_assoc($resultado)){
 					echo '<h1>';
 					echo 'Panel de control <small class="tituloGestionEvento">('.$eventos['nombre'].')</small>';
-					echo '<hr></h1>';
+					echo '</h1>';
+					echo '<article>';
 					echo '<div class="row">';
 					echo '<div class="col-md-4 col-lg-4">';
 					echo '<h2>Contabilidad</h2>';
@@ -120,8 +121,8 @@ if(!isset($_SESSION['login'])){
 					echo '</div>';
 					echo '</div>';
 					echo '<div class="row">';
-					echo '<div class="col-md-4 col-lg-4">';
-					echo '<a type="button" class="btn btn-primary btnGestionEvento" onClick="history.go(-1);return true;">Volver</a>';
+					echo '<div class="col-md-12 col-lg-12">';
+					echo '<a type="button" class="btn btn-primary btnVolverAtras" onClick="history.go(-1);return true;">Volver</a>';
 					echo '</div>';
 					echo '</div>';
 				}

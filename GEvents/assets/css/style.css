@@ -15,26 +15,120 @@
 }
 
 html{
-  background-image: url(../img/background.png) !important;
-  background-repeat: repeat-x repeat-y !important;
+  width: 100%;
+  height: 100%;
+  background: url(../img/bg2.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body{
   background-color: transparent;
+  color: #fff !important;
 }
 
 section{
-  padding: 0 16% !important;
+  padding: 0 13% !important;
+}
+
+article{
+  background-color: #fff !important;
+  opacity: 0.7 !important;
+  border-radius: 5px !important;
+  padding: 5% !important;
+  color: #000 !important;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.navbar-default {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    height: auto !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #d2d2d2;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-brand{
+  height: 80px !important;
+}
+
+.navbar-brand img{
+  width: 25% !important;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    background-color: transparent !important;
+    color: #d2d2d2 !important;
+}
+
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.42857;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: transparent !important;
+  color: #d2d2d2 !important
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0px;
+    margin: 2px 0px 0px;
+    font-size: 14px;
+    text-align: left;
+    list-style: outside none none;
+    background-color: #000;
+    opacity: 0.7 !important;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+}
+
+.btnVolverAtras{
+  float: right !important;
+}
+
+table {
+    color: #000;
 }
 
 .evento{
-  width: 16.6667%;
+  width: 100%;
   float:left;
   position: relative;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-top: 2%;
+  margin-bottom: 5%;
 	border-radius: 50%; /* Borde redondeado */
 	box-shadow: 0px 0px 2px #000; /* Sombra */
 	padding:0;
@@ -54,13 +148,29 @@ section{
 }
 
 .nombreEvento{
-  font-size: 20px;
-  margin-left: 18%;
+  font-size: 24px;
+  text-align: center;
+}
+
+.textoEvento{
+  font-size: 16px;
+}
+
+.lugarEvento{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.fechaEvento{
+  text-align: center;
+  font-style: italic;
 }
 
 .contenidoEvento{
   text-align: justify;
-  margin-bottom: 3%;
+  color: #000 !important;
 }
 
 .izquierda{
@@ -75,11 +185,12 @@ section{
 .divInicioSesion{
 	display: block;
   margin: 0 auto;
-  width: 60%;
+  width: 90%;
 }
 
 .buscarEventos{
 	width: 35%;
+  float: right;
 }
 
 .linkEventos{
@@ -91,7 +202,7 @@ section{
 }
 
 .eventoCompletoImg{
-	width: 80%;
+	width: 100%;
 	display: block;
 	margin: 0 auto;
 	float: none;
@@ -107,6 +218,8 @@ section{
 
 .ayudaMostrar{
 	display: inline !important;
+  font-size: 10px !important;
+
 }
 
 .editarPerfil{
@@ -235,7 +348,7 @@ fieldset{
 
   .evento{
     display: block;
-    width: 80%;
+    width: 100%;
     float: inherit;
     margin: 0 auto;
 		border-radius: 50%; /* Borde redondeado */
@@ -245,11 +358,6 @@ fieldset{
 		-moz-transition: all 1s;
 		-webkit-transition: all 1s;
 		-o-transition: all 1s;
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2;
   }
 
 	.evento:hover{
@@ -263,19 +371,11 @@ fieldset{
 
   .nombreEvento{
     margin-left: 3%;
-    -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
-    -ms-flex-order: 1;
-    -webkit-order: 1;
-    order: 1;
+
   }
 
   .textoEvento{
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -ms-flex-order: 2;
-    -webkit-order: 2;
-    order: 2;
+    font-size: 20px;
   }
 
   .contenidoEvento{

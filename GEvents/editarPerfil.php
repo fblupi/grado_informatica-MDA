@@ -5,7 +5,7 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
   <section>
-      <h1>Editar perfil<hr></h1>
+      <h1>Editar perfil</h1>
       <article>
        <?php
 				include 'libs/myLib.php';
@@ -19,7 +19,7 @@ if(!isset($_SESSION['login'])){
 					echo '<h2>';
 					echo $usuario['login'];
 					echo '</h2>';
-					echo '<form class="formularioEditarPerfil" id="formularioEditarPerfil" method="POST" action="" role="form" enctype="multipart/form-data">';
+					echo '<form class="formularioEditarPerfil form-horizontal" id="formularioEditarPerfil" method="POST" action="" role="form" enctype="multipart/form-data">';
 					echo '<div class="col-lg-6 col-md-6">';
 					echo '<div class="form-group">';
 					echo '<label>Nombre: </label>';

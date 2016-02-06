@@ -10,9 +10,9 @@ if(isset($_GET['idEvento'])){
 ?>
 <body>
 <section>
-  <h1>Crear actividad<hr></h1>
+  <h1>Crear actividad</h1>
 <article>
-	<form class="form-signin" method="POST" id="formularioCrearActividad" name="formularioCrearActividad" action="scripts/crearActividad.php" data-toggle="validator" enctype="multipart/form-data">
+	<form class="form-signin form-horizontal" method="POST" id="formularioCrearActividad" name="formularioCrearActividad" action="scripts/crearActividad.php" data-toggle="validator" enctype="multipart/form-data">
 			<input type="hidden" id="idEvento" name="idEvento" value="<?php echo $idEvento;?>">
 			<div class="form-group has-feedback">
 				<label>Nombre</label>

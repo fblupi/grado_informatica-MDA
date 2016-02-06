@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gevents</title>
 <!-- css -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="assets/css/style.css" rel="stylesheet"/>
@@ -24,7 +25,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" class="logo" alt="GEvents"></a>
+      <a class="navbar-brand" href="index.php"><img src="assets/img/logob.png" class="logo" alt="GEvents"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

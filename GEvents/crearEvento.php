@@ -5,9 +5,9 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
 <section id="divInicioSesion" class="divInicioSesion">
-	<h1>Crear evento<hr></h1>
+	<h1>Crear evento	</h1>
 <article>
-	<form class="form-signin" method="POST" id="formularioCrearEvento" name="formularioCrearEvento" action="" data-toggle="validator" enctype="multipart/form-data">
+	<form class="form-signin form-horizontal" method="POST" id="formularioCrearEvento" name="formularioCrearEvento" action="" data-toggle="validator" enctype="multipart/form-data">
 			<div class="form-group has-feedback">
 				<label>Nombre del evento</label>
 				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Feria de Sevilla 2016" maxlength="45" required>

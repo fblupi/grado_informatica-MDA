@@ -6,7 +6,9 @@ if(isset($_SESSION['login'])){
 <body>
 <section id="divInicioSesion" class="divInicioSesion">
 <article>
-	<form class="form-signin" method="POST" id="formularioRegistroUsuario" name="formularioRegistroUsuario" action="" data-toggle="validator" enctype="multipart/form-data">
+	<form class="form-signin form-horizontal" method="POST" id="formularioRegistroUsuario" name="formularioRegistroUsuario" action="" data-toggle="validator" enctype="multipart/form-data">
+		<div class="row">
+			<div class="col-md-6 col-lg-6">
 			<div class="form-group has-feedback">
 				<label>Nombre de usuario</label>
 				<input type="text" class="form-control" id="login" name="login" placeholder="Nombre de usuario" maxlength="10" required>
@@ -35,6 +37,8 @@ if(isset($_SESSION['login'])){
 				<label>Apellidos</label>
 					<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Fernández">
 			</div>
+		</div>
+		<div class="col-md-6 col-lg-6">
 		<div class="form-group">
 				<label>Dirección</label>
 					<input type="text" class="form-control" id="direccion" name="direccion" placeholder="Calle Limonar">
@@ -61,6 +65,8 @@ if(isset($_SESSION['login'])){
 				</div>
 				<small class="izquierda">¿Ya estás registrado?<a href="signin.php"> Inicia sesión</a></small>
 			</div>
+		</div>
+	</div>
 		</form>
 </article>
 </section>

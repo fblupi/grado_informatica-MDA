@@ -1,8 +1,9 @@
 <?php include 'header.php'; ?>
 <body>
   <section>
-      <h1>Eventos<hr></h1>
-      <div class="buscarEventos">
+
+      <h1>Eventos<div class="buscarEventos">
+
       <form role="search">
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
@@ -11,41 +12,55 @@
         <span class="help-block ayudaEsconder" id="ayuda">Puedes realizar la búsqueda por nombre o por lugar </span>
        </form>
        </div>
+      </h1>
+
       <article>
       <div id="todosEventos">
        <?php
 				include 'libs/myLib.php';
 				$conn = dbConnect();
 
-				$sql = "SELECT * FROM Evento ORDER BY fechaInicio;";
+				$sql = "SELECT * FROM evento ORDER BY fechaInicio;";
 				$resultado = mysqli_query($conn, $sql);
-				while($eventos = mysqli_fetch_assoc($resultado)){
+        $todosEventos = Array();
+
+        while($eventos = mysqli_fetch_assoc($resultado)){
+          array_push($todosEventos,$eventos);
+        }
+
+        foreach(array_chunk($todosEventos, 2, true) as $todosLosEventos) {
 					echo '<div class="contenidoEvento row">';
-					echo '<a class="contenidoEvento linkEventos" href="evento.php?i=';
-					echo $eventos['id'];
-					echo '">';
-					echo '<img class="evento" src="';
-					echo $eventos['imagen'];
-					echo '">';
-					echo '<h2 class="nombreEvento">';
-					echo $eventos['nombre'];
-					echo '</h2>';
-					echo '<div class="col-lg-10 col-md-10 textoEvento">';
-					echo '<p>';
-					echo $eventos['lugar'];
-					echo '</p>';
-					echo '<p>';
-					$fechaInicio = strtotime($eventos['fechaInicio']);
-					$fechaFin = strtotime($eventos['fechaFin']);
-					echo date('j F, Y', $fechaInicio). ' - '.date('j F, Y', $fechaFin);
-					echo '</p>';
-					echo '<p>';
-					$descripcion = str_split($eventos['descripcion'], 50);
-          echo $descripcion[0].'...';
-					echo '</p>';
-					echo '</div>';
-					echo '</div>';
-				}
+            foreach ($todosLosEventos as $evento) {
+              echo '<div class="col-md-6 col-lg-6">';
+    					echo '<a class="contenidoEvento linkEventos" href="evento.php?i=';
+    					echo $evento['id'];
+    					echo '">';
+    					echo '<img class="evento" src="';
+    					echo $evento['imagen'];
+    					echo '">';
+    					echo '<h2 class="nombreEvento">';
+    					echo $evento['nombre'];
+    					echo '</h2>';
+    					echo '<div class="textoEvento">';
+    					echo '<p class="lugarEvento">';
+    					echo $evento['lugar'];
+    					echo '</p>';
+    					echo '<p class="fechaEvento">';
+    					$fechaInicio = strtotime($evento['fechaInicio']);
+    					$fechaFin = strtotime($evento['fechaFin']);
+    					echo date('j/m/Y', $fechaInicio). ' - '.date('j/m/Y', $fechaFin);
+    					echo '</p>';
+    					echo '<p class="descripcionEvento">';
+    					$descripcion = str_split($evento['descripcion'], 150);
+              echo $descripcion[0].'...';
+    					echo '</p>';
+    					echo '</div>';
+              echo '</div>';
+
+            }
+          echo '</div>';
+        }
+        echo '</div>';
 
 				?>
 				</div>

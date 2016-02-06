@@ -16,9 +16,9 @@ $resultado = mysqli_query($conn, $sql);
 ?>
 <body>
 <section>
-  <h1>Anotar venta<hr></h1>
+  <h1>Anotar venta</h1>
 <article>
-	<form class="form-signin" method="POST" id="formularioAnotarVenta" name="formularioAnotarVenta" action="scripts/anotarVenta.php" data-toggle="validator" enctype="multipart/form-data">
+	<form class="form-signin form-horizontal" method="POST" id="formularioAnotarVenta" name="formularioAnotarVenta" action="scripts/anotarVenta.php" data-toggle="validator" enctype="multipart/form-data">
 			<input type="hidden" id="idEvento" name="idEvento" value="<?php echo $idEvento;?>">
 			<div class="form-group has-feedback">
 				<label>Producto</label>

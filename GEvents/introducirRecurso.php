@@ -5,9 +5,9 @@ if(!isset($_SESSION['login'])){
 ?>
 <body>
 <section>
-  <h1>Introducir recurso<hr></h1>
+  <h1>Introducir recurso</h1>
 <article>
-	<form class="form-signin" method="POST" id="formularioIntroducirRecurso" name="formularioIntroducirRecurso" action="scripts/introducirRecurso.php" data-toggle="validator" enctype="multipart/form-data">
+	<form class="form-signin form-horizontal" method="POST" id="formularioIntroducirRecurso" name="formularioIntroducirRecurso" action="scripts/introducirRecurso.php" data-toggle="validator" enctype="multipart/form-data">
 			<div class="form-group has-feedback">
 				<label>Nombre</label>
 				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Sudaderas" maxlength="45" required>
