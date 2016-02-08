@@ -59,7 +59,7 @@ if(isset($_FILES['imagen']) && $_FILES['imagen']['name']){
 }
 
 $conexion = dbConnect();
-$sql = "UPDATE usuario SET  nombre = '$nombre', apellidos = '$apellidos', direccion = '$direccion',
+$sql = "UPDATE Usuario SET  nombre = '$nombre', apellidos = '$apellidos', direccion = '$direccion',
 	telefono = '$telefono', localizacion = '$localizacion', fechaNacimiento = '$fechaNacimiento', imagen = '$imagen' WHERE usuario.login = '$login';";
 
 if(!mysqli_query($conexion, $sql)){

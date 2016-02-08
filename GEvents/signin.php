@@ -6,7 +6,7 @@
 <body>
 <section id="divInicioSesion" class="divInicioSesion">
 	<article>
-		<form class="form-horizontal" method="POST" action="" id="formularioInicioSesion" name="formularioInicioSesion" data-toggle="validator">
+		<form class="form-horizontal" method="POST" action="" onsubmit="IniciarSesion();return false;" id="formularioInicioSesion" name="formularioInicioSesion" data-toggle="validator">
 			<div class="form-group has-feedback">
 				<label>Nombre de usuario</label>
 					<input type="text" class="form-control" id="login" name="login" placeholder="Nombre de usuario" required>

@@ -1,0 +1,2 @@
+[07-Feb-2016 09:46:42 Europe/Madrid] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/lourqanf/public_html/gevents/index.php on line 27
+[07-Feb-2016 09:47:58 Europe/Madrid] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/lourqanf/public_html/gevents/index.php on line 27

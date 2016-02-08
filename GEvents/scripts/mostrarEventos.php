@@ -3,7 +3,7 @@ include_once('../libs/myLib.php');
 $conn=dbConnect();
 $nombre_filtro = $_GET['search'];
 
-$todosEventos = "SELECT * FROM evento WHERE evento.nombre like '%$nombre_filtro%' OR evento.lugar like '%$nombre_filtro%' ORDER BY fechaInicio;";
+$todosEventos = "SELECT * FROM Evento WHERE Evento.nombre like '%$nombre_filtro%' OR Evento.lugar like '%$nombre_filtro%' ORDER BY fechaInicio;";
 
 $result = mysqli_query($conn, $todosEventos);
 

@@ -6,9 +6,9 @@
 	if(!empty($id_evento)){
 		//Realizo la conexión si tenemos todos los datos necesarios
 		$conexion = dbConnect();
-		$gasto="SELECT SUM(importe) FROM cuenta WHERE tipo='gasto' AND evento='$id_evento';";
+		$gasto="SELECT SUM(importe) FROM Cuenta WHERE tipo='gasto' AND evento='$id_evento';";
 		$resultadogasto = mysqli_query($conexion, $gasto);
-		$beneficio="SELECT SUM(importe) FROM cuenta WHERE tipo='beneficio' AND evento='$id_evento';";
+		$beneficio="SELECT SUM(importe) FROM Cuenta WHERE tipo='beneficio' AND evento='$id_evento';";
 		$resultadobenefi = mysqli_query($conexion, $beneficio);
 		?>
 		<table>

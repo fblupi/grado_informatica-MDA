@@ -19,7 +19,7 @@ if(!isset($_SESSION['login'])){
           include_once 'libs/myLib.php';
           $conn = dbConnect();
           $idEvento = $_GET['i'];
-          $sql = "SELECT * FROM producto WHERE evento = $idEvento;";
+          $sql = "SELECT * FROM Producto WHERE evento = $idEvento;";
           $resultado = mysqli_query($conn, $sql);
 
           while($cuenta = mysqli_fetch_assoc($resultado)){

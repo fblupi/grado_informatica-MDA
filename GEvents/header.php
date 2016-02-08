@@ -25,7 +25,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php"><img src="assets/img/logob.png" class="logo" alt="GEvents"></a>
+      <a class="navbar-brand" href="index.php"><img src="assets/img/GEvents_White.png" class="logo" alt="GEvents"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

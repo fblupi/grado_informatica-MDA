@@ -63,7 +63,7 @@ if(!empty($login) && !empty($correo) && !empty($pass)){
 	}
 
 	$conexion = dbConnect();
-	$sql = "INSERT INTO usuario (login, correo, pass, nombre, apellidos, direccion,
+	$sql = "INSERT INTO Usuario (login, correo, pass, nombre, apellidos, direccion,
 		telefono, localizacion, fechaNacimiento, imagen) VALUES ('" . $login . "', '" .
 		$correo . "', '" . $pass . "', '" . $nombre . "', '" . $apellidos . "', '" . $direccion . "', '"
 		. $telefono . "', '" . $localizacion . "', '" . $fechaNacimiento . "', '" . $imagen . "');";
@@ -77,7 +77,7 @@ if(!empty($login) && !empty($correo) && !empty($pass)){
 		mysqli_close($conexion);
 		salir2("El usuario ya existe", -1, 0);
 	}else{
-		$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.    	
+		$_SESSION['login'] = $login; //Con esto iniciará conexión automaticamente.
 		$_SESSION['idUsuario'] = mysqli_insert_id($resultado);
 		mysqli_close($conexion);
 		//Si hace falta más datos para la sesión sólo hay que añadirlos aquí.

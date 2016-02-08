@@ -10,7 +10,7 @@ if(isset($_GET['i'])){
 				include 'libs/myLib.php';
 				$conn = dbConnect();
 
-				$sql = "SELECT * FROM evento WHERE id = '$idEvento';";
+				$sql = "SELECT * FROM Evento WHERE id = '$idEvento';";
 				$resultado = mysqli_query($conn, $sql);
 				while($eventos = mysqli_fetch_assoc($resultado)){
 					echo '<h1>';

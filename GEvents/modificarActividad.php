@@ -15,7 +15,7 @@ if(isset($_GET['idActividad'])){
 
 include_once 'libs/myLib.php';
 $conn = dbConnect();
-$sql = "SELECT * FROM actividad WHERE id = $idActividad;";
+$sql = "SELECT * FROM Actividad WHERE id = $idActividad;";
 $resultado = mysqli_query($conn, $sql);
 $datosActividad = mysqli_fetch_assoc($resultado);
 ?>

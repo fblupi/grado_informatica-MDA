@@ -18,7 +18,7 @@ if(!isset($_SESSION['login'])){
 				include 'libs/myLib.php';
 				$conn = dbConnect();
 
-				$sql = "SELECT * FROM organizador WHERE evento = '$idEvento' AND usuario = '$idUsuario';";
+				$sql = "SELECT * FROM Organizador WHERE evento = '$idEvento' AND usuario = '$idUsuario';";
 				$resultado = mysqli_query($conn, $sql);
 
 				if(mysqli_num_rows($resultado) == 0){ //no es organizador

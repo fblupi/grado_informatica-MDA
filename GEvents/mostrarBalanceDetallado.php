@@ -20,7 +20,7 @@ if(!isset($_SESSION['login'])){
           include_once 'libs/myLib.php';
           $conn = dbConnect();
           $idEvento = $_GET['i'];
-          $sql = "SELECT * FROM cuenta WHERE evento = $idEvento ORDER BY fecha DESC;";
+          $sql = "SELECT * FROM Cuenta WHERE evento = $idEvento ORDER BY fecha DESC;";
           $resultado = mysqli_query($conn, $sql);
 
           while($cuenta = mysqli_fetch_assoc($resultado)){
@@ -47,10 +47,10 @@ if(!isset($_SESSION['login'])){
             echo '</tr>';
           }
 
-          $gasto="SELECT SUM(importe) AS gasto FROM cuenta WHERE tipo='0' AND evento='$idEvento';";
+          $gasto="SELECT SUM(importe) AS gasto FROM Cuenta WHERE tipo='0' AND evento='$idEvento';";
           $resultadogasto = mysqli_query($conn, $gasto);
           $gastos = mysqli_fetch_assoc($resultadogasto);
-          $beneficio="SELECT SUM(importe) AS beneficio FROM cuenta WHERE tipo='1' AND evento='$idEvento';";
+          $beneficio="SELECT SUM(importe) AS beneficio FROM Cuenta WHERE tipo='1' AND evento='$idEvento';";
           $resultadobenefi = mysqli_query($conn, $beneficio);
           $beneficios = mysqli_fetch_assoc($resultadobenefi);
 

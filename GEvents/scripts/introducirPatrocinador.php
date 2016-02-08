@@ -9,39 +9,43 @@ if (!isset($_SESSION['login'])) {//Si no se puede acceder a $_SESSION['login'] e
 	$concepto=$_POST['concepto'];
 	$descripcion=$_POST['descripcion'];
 	$cantidad=$_POST['cantidad'];
-	$tipo="Patrocinio";
-	$fecha=date("d/m/Y");
+	$tipo = 1;
+	$fecha=date("Y/m/d H:i:s");
 	$importe=$_POST['importe'];
-	$evento=$_GET['evento'];
-	$opcion=$_POST['opcion']; //será un campo oculto q variará depende el formulario (Monetaria/Producto)
+	$evento=$_POST['evento'];
+	$opcion=$_POST['tipo']; //será un campo oculto q variará depende el formulario (Monetaria/Producto)
 
-	
+
 
 	if(!empty($concepto) && !empty($descripcion) && !empty($evento) && !empty($cantidad) && !empty($importe)){
 		//Realizo la conexión si tenemos todos los datos necesarios
 		$conexion = dbConnect();
-		if(strcmp($opcion,"Monetaria"==0){ //si es monetaria
-			$query="INSERT INTO cuenta(concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES " .
+		if($opcion == "Monetaria"){ //si es monetaria
+			$query="INSERT INTO Cuenta(concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES " .
 			"('". $concepto . "','" . $importe . "','" . $descripcion . "'," . $cantidad . "," . $evento . ",'" . $tipo . "','" . $fecha . "');";
-			$resultado = mysqli_query($conexion, $sql);
-		} else if(strcmp($opcion,"Producto")==0){ //si es producto
-			$query="INSERT INTO cuenta(concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES " .
-			"('". $concepto . "','" . $importe . "','" . $descripcion . "'," . $cantidad . "," . $evento . ",'" . $tipo . "','" . $fecha . "');";
-			$resultado = mysqli_query($conexion, $sql);
-			//Añadimos el producto al evento 
-			$query="INSERT INTO producto(nombre, precioCompra, precioVenta, cantidad, evento) VALUES " .
-			"('". $concepto . "', 0,'" . $importe . "'," . $cantidad . "," . $evento . "');";
-			$resultado = mysqli_query($conexion, $sql);
+      $sql = "INSERT INTO Patrocinador(nombre, idEvento) VALUES ('$concepto', '$evento');";
+      $resultado = mysqli_query($conexion, $query);
+      $resultado2 = mysqli_query($conexion, $sql);
+		} else if($opcion == "Producto"){
+      $producto = $_POST['producto']; //si es producto
+			$query="INSERT INTO Cuenta(concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES " .
+			"('". $concepto . "','" . 0 . "','" . $descripcion . "'," . $cantidad . "," . $evento . ",'" . $tipo . "','" . $fecha . "');";
+      $sql = "INSERT INTO Patrocinador(nombre, idEvento) VALUES ('$concepto', '$evento');";
+      $resultado2 = mysqli_query($conexion, $sql);
+      $resultado = mysqli_query($conexion, $query);
+			//Añadimos el producto al evento
+			$query="INSERT INTO Producto(nombre, precioCompra, precioVenta, cantidad, evento) VALUES ('$producto.' '.$concepto', 0, $importe, $cantidad, $evento);";
+			$resultado = mysqli_query($conexion, $query);
 		}
 
-		//Cierro conexión 
+		//Cierro conexión
 		mysqli_close($conexion);
 		if($resultado){
 			salir("Patrocinador introducido correctamente", 0);
 		}else{
 			salir("No se ha podido introducir al patrocinador", -1);
 		}
-	}// 
-	
+	}//
+
 
 ?>

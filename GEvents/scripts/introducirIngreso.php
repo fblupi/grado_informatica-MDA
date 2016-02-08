@@ -2,50 +2,41 @@
 
 include_once "../libs/myLib.php";
 
-if (!isset($_SESSION['login'])) {
-    session_start();
+//introducir un registro en Cuenta sobre un evento con importe negativo (gasto)
+
+$concepto = $_POST["concepto"];
+$importe = $_POST["importe"];
+$descripcion = $_POST["descripcion"];
+$cantidad = $_POST["cantidad"];
+$evento = $_POST["evento"];
+$tipo = 1;
+$fecha = date('Y/m/d H:i:s');
+
+if (!empty($concepto) && !empty($importe) && !empty($descripcion) &&
+        !empty($cantidad) && !empty($evento) && !empty($tipo) && !empty($fecha)) {
+
+    //realizo la conexión
+    $conexion = dbConnect();
+
+    //inserto los datos introducidos
+    $sql = "INSERT INTO Cuenta (concepto, importe, descripcion, cantidad, evento, tipo, fecha)
+                VALUES ('$concepto', $importe, '$descripcion', $cantidad, '$evento', '$tipo', '$fecha')";
+
+    //almaceno en $resultado
+    $resultado = mysqli_query($conexion, $sql);
+
+    //si hay error al insertar el gasto, muestro el error y salgo
+    if (!$resultado) {
+    		mysqli_close($conexion);
+        salir('ERROR: No se pudo realizar la operación: ' . $sql . '<br>' . mysql_error(), -1);
+
+    //si no hay error, muestro que se ha insertado correctamente
+    } else {
+    		mysqli_close($conexion);
+        salir('Se insertó el gasto correctamente', 0);
+    }
 }
 
-$idEvento = $_GET['idEvento'];
-$idProducto = $_POST['idProducto'];
-$cantidad = $_POST['cantidad'];
-$precio = $_POST['precio'];
+//cierra la conexión, muestra el resultado y devuelve el control a la página desde la que se referencia
 
-if(!empty($idEvento) && !empty($idProducto) && !empty($cantidad) && !empty($precio)){
-	//Realizo la conexión si tenemos todos los datos necesarios
-	$conexion = dbConnect();
-	$sql = "SELECT FROM producto WHERE id=" . $idProducto . ";";
-	$resultado = mysqli_query($conexion, $sql);
-	if($resultado){
-		$producto = mysqli_fetch_assoc($resultado);
-		$cantidadAnterior = $producto['cantidad'];
-		if($cantidad <= $cantidadAnterior){ //solo puede vender la cantidad que haya registrada en el sistema como máximo
-			$sql = "UPDATE producto SET cantidad=" . ($cantidadAnterior-$cantidad) . " WHERE id=" . $idProducto . ";";
-			$resultado = mysqli_query($conexion, $sql);
-			if($resultado){ //si se ha podido actualizar la cantidad
-				
-				$fecha=date("d/m/Y");
-				$sql="INSERT INTO cuenta(concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES " .
-					"('venta de ". $producto['nombre'] . "','" . $precio . "'," . $cantidad . "," . $idEvento . ",'Ingreso','" . $fecha . "');";
-				$resultado = mysqli_query($conexion, $sql);
-				if($resultado){
-					mysqli_close($conexion);
-					salir("Ingreso introducido correctamente!", 0);
-				}else{
-					$sql = "UPDATE producto SET cantidad=" . $cantidadAnterior . " WHERE id=" . $idProducto . ";";
-					mysqli_close($conexion);
-					salir("No se ha podido introducir el ingreso", -1);
-				}
-			}else{
-				mysqli_close($conexion);
-				salir("No se ha podido actualizar la venta", -1);
-			}
-		}else{
-			mysqli_close($conexion);
-			salir("No hay esa cantidad de ese producto", -1);
-		}
-	}else{
-		mysqli_close($conexion);
-		salir("No se ha podido consultar el producto", -1);
-	}
-}
+?>

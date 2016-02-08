@@ -6,7 +6,7 @@ $login = $_POST['login'];
 $pass = md5($_POST['pass']);
 
 $conexion = dbConnect();
-$sql = "SELECT * FROM usuario WHERE usuario.login='$login'";
+$sql = "SELECT * FROM Usuario WHERE usuario.login='$login'";
 $resultado = mysqli_query($conexion, $sql);
 
 if ($row = mysqli_fetch_array($resultado)) {

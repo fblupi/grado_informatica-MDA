@@ -18,7 +18,7 @@ if(!isset($_SESSION['login'])){
 				include 'libs/myLib.php';
 				$conn = dbConnect();
 
-				$sql = "SELECT * FROM organizador WHERE evento = '$idEvento' AND usuario = '$idUsuario';";
+				$sql = "SELECT * FROM Organizador WHERE evento = '$idEvento' AND usuario = '$idUsuario';";
 				$resultado = mysqli_query($conn, $sql);
 
 				if(mysqli_num_rows($resultado) == 0){ //no es organizador
@@ -28,7 +28,7 @@ if(!isset($_SESSION['login'])){
 				$sql = "SELECT nombre FROM Evento WHERE id = '$idEvento';";
 				$resultado = mysqli_query($conn, $sql);
 
-        $sql2 = "SELECT * FROM actividad WHERE evento = '$idEvento';";
+        $sql2 = "SELECT * FROM Actividad WHERE evento = '$idEvento';";
         $resultado2 = mysqli_query($conn, $sql2);
 
 				while($eventos = mysqli_fetch_assoc($resultado)){

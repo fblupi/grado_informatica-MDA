@@ -2,6 +2,9 @@
 if(!isset($_SESSION['login'])){
 	echo '<script>location.href="signin.php";</script>';
 }
+if(isset($_GET['i'])){
+	$idEvento = $_GET['i'];
+}
 ?>
 <body>
 <section>
@@ -11,6 +14,8 @@ if(!isset($_SESSION['login'])){
     <div class="col-md-6 col-lg-6">
       <h2>Monetaria</h2>
 	<form class="form-signin form-horizontal" method="POST" id="formularioIntroducirInversion" name="formularioIntroducirInversion" action="scripts/introd_donacion.php" data-toggle="validator" enctype="multipart/form-data">
+		<input type="hidden" class="form-control" id="id_evento" name="id_evento" value="<?= $idEvento ?>">
+		<input type="hidden" class="form-control" id="tipo" name="tipo" value="dmonetaria">
 			<div class="form-group has-feedback">
 				<label>Concepto</label>
 				<input type="text" class="form-control" id="concepto" name="concepto" maxlength="45" required>
@@ -21,7 +26,7 @@ if(!isset($_SESSION['login'])){
 			</div>
 			<div class="form-group">
 				<label>Importe (€)</label>
-				<input type="text" class="form-control" id="precioCompra" name="precioCompra" required>
+				<input type="text" class="form-control" id="importe" name="importe" required>
 			</div>
       <div class="form-group">
         <label>Cantidad</label>
@@ -34,8 +39,11 @@ if(!isset($_SESSION['login'])){
   </div>
   <div class="col-md-6 col-lg-6">
     <h2>Producto</h2>
-    <form class="form-signin" method="POST" id="formularioIntroducirInversion" name="formularioIntroducirInversion" action="" data-toggle="validator" enctype="multipart/form-data">
-        <div class="form-group has-feedback">
+    <form class="form-signin" method="POST" id="formularioIntroducirInversion" name="formularioIntroducirInversion" action="scripts/introd_donacion.php" data-toggle="validator" enctype="multipart/form-data">
+			<input type="hidden" class="form-control" id="id_evento" name="id_evento" value="<?= $idEvento ?>">
+
+			<input type="hidden" class="form-control" id="tipo" name="tipo" value="dproducto">
+				<div class="form-group has-feedback">
           <label>Concepto</label>
           <input type="text" class="form-control" id="concepto" name="concepto" maxlength="45" required>
         </div>
@@ -45,7 +53,7 @@ if(!isset($_SESSION['login'])){
         </div>
         <div class="form-group">
           <label>Precio de venta (€)</label>
-          <input type="text" class="form-control" id="precioCompra" name="precioCompra" required>
+          <input type="text" class="form-control" id="importe" name="importe" required>
         </div>
         <div class="form-group">
           <label>Cantidad</label>

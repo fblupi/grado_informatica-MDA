@@ -20,7 +20,7 @@
 				include 'libs/myLib.php';
 				$conn = dbConnect();
 
-				$sql = "SELECT * FROM evento ORDER BY fechaInicio;";
+				$sql = "SELECT * FROM Evento ORDER BY fechaInicio;";
 				$resultado = mysqli_query($conn, $sql);
         $todosEventos = Array();
 

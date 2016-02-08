@@ -2,12 +2,17 @@
 if(!isset($_SESSION['login'])){
 	echo '<script>location.href="signin.php";</script>';
 }
+if(isset($_GET['i'])){
+	$idEvento = $_GET['i'];
+}
 ?>
 <body>
 <section>
   <h1>Introducir inversión</h1>
 <article>
 	<form class="form-signin form-horizontal" method="POST" id="formularioIntroducirInversion" name="formularioIntroducirInversion" action="scripts/introducirInversion.php" data-toggle="validator" enctype="multipart/form-data">
+		<input type="hidden" class="form-control" id="evento" name="evento" value="<?= $idEvento; ?>">
+
 			<div class="form-group has-feedback">
 				<label>Concepto</label>
 				<input type="text" class="form-control" id="concepto" name="concepto" maxlength="45" required>

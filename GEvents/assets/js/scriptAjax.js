@@ -31,6 +31,17 @@ function MostrarUsuarios(id) {
     });
 }
 
+function IniciarSesion(){
+	$.ajax({
+					data:  $("#formularioInicioSesion").serialize(),
+					url:   'scripts/login.php',
+					type:  'POST',
+					success:  function (response) {
+									$("#resultado").html(response);
+					}
+	});
+}
+
 $('#formularioInicioSesion').on('submit', function(e){
     e.preventDefault();
     $.ajax({

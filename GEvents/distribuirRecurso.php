@@ -11,9 +11,9 @@ if(isset($_GET['i'])){
 include_once 'libs/myLib.php';
 $conn = dbConnect();
 
-$sql = "SELECT * FROM producto WHERE evento = $idEvento;";
+$sql = "SELECT * FROM Producto WHERE evento = $idEvento;";
 $resultado = mysqli_query($conn, $sql);
-$sql2 = "SELECT Usuario.id, Usuario.nombre, Usuario.apellidos FROM organizador, usuario WHERE usuario.id = organizador.usuario AND organizador.evento = $idEvento;";
+$sql2 = "SELECT Usuario.id, Usuario.nombre, Usuario.apellidos FROM Organizador, Usuario WHERE usuario.id = organizador.usuario AND organizador.evento = $idEvento;";
 $resultado2 = mysqli_query($conn, $sql2);
 ?>
 <body>

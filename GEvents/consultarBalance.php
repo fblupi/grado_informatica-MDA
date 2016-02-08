@@ -13,10 +13,10 @@ if(!isset($_SESSION['login'])){
         		//Realizo la conexión si tenemos todos los datos necesarios
             include_once "libs/myLib.php";
             $conexion = dbConnect();
-        		$gasto="SELECT SUM(importe) AS gasto FROM cuenta WHERE tipo='0' AND evento='$id_evento';";
+        		$gasto="SELECT SUM(importe) AS gasto FROM Cuenta WHERE tipo='0' AND evento='$id_evento';";
         		$resultadogasto = mysqli_query($conexion, $gasto);
             $gastos = mysqli_fetch_assoc($resultadogasto);
-        		$beneficio="SELECT SUM(importe) AS beneficio FROM cuenta WHERE tipo='1' AND evento='$id_evento';";
+        		$beneficio="SELECT SUM(importe) AS beneficio FROM Cuenta WHERE tipo='1' AND evento='$id_evento';";
         		$resultadobenefi = mysqli_query($conexion, $beneficio);
             $beneficios = mysqli_fetch_assoc($resultadobenefi);
         		?>

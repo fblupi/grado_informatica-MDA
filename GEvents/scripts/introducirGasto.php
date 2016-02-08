@@ -9,19 +9,18 @@ $importe = $_POST["importe"];
 $descripcion = $_POST["descripcion"];
 $cantidad = $_POST["cantidad"];
 $evento = $_POST["evento"];
-$tipo = $_POST['tipo'];
-$fecha = $_POST['fecha'];
+$tipo = 0;
+$fecha = date('Y/m/d H:i:s');
 
 if (!empty($concepto) && !empty($importe) && !empty($descripcion) &&
-        !empty($cantidad) && !empty($evento) && !empty($tipo) && !empty($fecha)) {
+        !empty($cantidad) && !empty($evento) && !empty($fecha)) {
 
     //realizo la conexión
     $conexion = dbConnect();
 
     //inserto los datos introducidos
     $sql = "INSERT INTO Cuenta (concepto, importe, descripcion, cantidad, evento, tipo, fecha)
-                VALUES ('" + $concepto + "', '" + ($importe * (-1)) + "', '" + $descripcion + "', '" +
-            $cantidad + "', '" + $evento + "', '" + $tipo + "', '" + $fecha + "')";
+                VALUES ('$concepto', $importe, '$descripcion', $cantidad, '$evento', $tipo, '$fecha')";
 
     //almaceno en $resultado
     $resultado = mysqli_query($conexion, $sql);
@@ -34,8 +33,10 @@ if (!empty($concepto) && !empty($importe) && !empty($descripcion) &&
     //si no hay error, muestro que se ha insertado correctamente
     } else {
     		mysqli_close($conexion);
-        salir('Se insertó el gasto correctamente', 0);        
+        salir('Se insertó el gasto correctamente', 0);
     }
+}else{
+  salir('ERROR: Faltan datos.');
 }
 
 //cierra la conexión, muestra el resultado y devuelve el control a la página desde la que se referencia
