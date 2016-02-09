@@ -33,7 +33,7 @@ if (!empty($concepto) && !empty($importe) && !empty($descripcion) &&
     //si no hay error, muestro que se ha insertado correctamente
     } else {
     		mysqli_close($conexion);
-        salir('Se insertó el gasto correctamente', 0);
+        salir3('Se insertó el gasto correctamente', '../consultarBalance.php?i='.$evento);
     }
 }else{
   salir('ERROR: Faltan datos.');

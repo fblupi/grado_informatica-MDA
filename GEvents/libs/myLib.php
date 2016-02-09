@@ -25,6 +25,14 @@ function salir($str, $code) {
     return $code;
 }
 
+function salir3($str, $code) {
+    echo '<script>
+            alert("' . $str . '");
+            location.href= " ' . $code . '";
+        </script>';
+    return $code;
+}
+
 function salir2($str, $code, $url) {
   switch ($code) {
     case '0':

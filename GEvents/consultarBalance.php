@@ -92,7 +92,7 @@ if(!isset($_SESSION['login'])){
         ?>
 			<div class="row">
 			<div class="col-md-4 col-lg-4">
-				<a type="button" class="btn btn-primary" onClick="history.go(-1);return true;">Volver</a>
+				<a class="btn btn-primary inicioSesion btnVolver" href="gestionarEvento.php?i=<?= $idEvento ?>">Volver</a>
 			</div>
 			</div>
       </article>

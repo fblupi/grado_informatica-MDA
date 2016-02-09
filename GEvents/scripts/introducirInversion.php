@@ -24,7 +24,7 @@ if (!empty($concepto) && !empty($descripcion) && !empty($precioCompra) &&!empty(
   if ($resultadoCuenta) {
     if ($resultadoProducto) {
 			mysqli_close($conexion);
-      salir("La inversión se ha introducido correctamente", 0);
+      salir3("La inversión se ha introducido correctamente", '../consultarBalance.php?i='.$evento);
     } else {
     	mysqli_close($conexion);
       salir("Error introduciendo la inversión. No se pudo realizar la operación: " . $sqlProducto . "<br>" . mysql_error(), -1);

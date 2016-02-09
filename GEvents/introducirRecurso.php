@@ -26,7 +26,7 @@ if(!isset($_SESSION['login'])){
   			</div>
 			<div class="form-group">
 					<button type="submit" class="btn btn-success inicioSesion btnCrear">Introducir</button>
-					<a type="button" class="btn btn-primary inicioSesion btnVolver" onClick="history.go(-1);return true;">Volver</a>
+					<a class="btn btn-primary inicioSesion btnVolver" href="gestionarEvento.php?i=<?= $idEvento ?>">Volver</a>
 			</div>
 		</form>
 </article>

@@ -16,7 +16,7 @@ include_once('../libs/myLib.php');
 		if($tipo == "dmonetaria"){
 			$query="INSERT INTO Cuenta(concepto, importe, descripcion, cantidad, evento, tipo, fecha) VALUES ('$concepto',$importe,'$descripcion',$cantidad,'$id_evento', 1 ,'$fecha');";
 			$resultado = mysqli_query($conexion, $query);
-			salir('Se insertó la donación correctamente', 0);
+			salir3('Se insertó la donación correctamente', '../consultarBalance.php?i='.$id_evento);
 
 		}
 		//Si es de tipo producto
@@ -26,7 +26,7 @@ include_once('../libs/myLib.php');
 				//Añadimos el producto al evento
 				$query2="INSERT INTO Producto(nombre, precioCompra, precioVenta, cantidad, evento) VALUES ('$concepto',0 , $importe,'$cantidad','$id_evento');";
 				$resultado = mysqli_query($conexion, $query2);
-				salir('Se insertó la donación correctamente', 0);
+				salir3('Se insertó la donación correctamente', '../consultarBalance.php?i='.$id_evento);
 
 		}
 		//Cierro conexión

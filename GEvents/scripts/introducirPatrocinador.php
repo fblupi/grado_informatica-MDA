@@ -41,7 +41,7 @@ if (!isset($_SESSION['login'])) {//Si no se puede acceder a $_SESSION['login'] e
 		//Cierro conexión
 		mysqli_close($conexion);
 		if($resultado){
-			salir("Patrocinador introducido correctamente", 0);
+			salir3("Patrocinador introducido correctamente", '../consultarBalance.php?i='.$evento);
 		}else{
 			salir("No se ha podido introducir al patrocinador", -1);
 		}

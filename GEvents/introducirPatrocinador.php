@@ -69,7 +69,7 @@ if(isset($_GET['i'])){
       </form>
     </div>
   </div>
-  <a type="button" class="btn btn-primary inicioSesion btnVolver" onClick="history.go(-1);return true;">Volver</a>
+	<a class="btn btn-primary inicioSesion btnVolver" href="gestionarEvento.php?i=<?= $idEvento ?>">Volver</a>
 </article>
 </section>
 </body>
