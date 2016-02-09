@@ -122,7 +122,7 @@ if(!isset($_SESSION['login'])){
 					echo '</div>';
 					echo '<div class="row">';
 					echo '<div class="col-md-12 col-lg-12">';
-					echo '<a type="button" class="btn btn-primary btnVolverAtras" onClick="history.go(-1);return true;">Volver</a>';
+					echo '<a class="btn btn-primary btnVolverAtras" href="eventosUsuario.php">Volver</a>';
 					echo '</div>';
 					echo '</div>';
 				}
